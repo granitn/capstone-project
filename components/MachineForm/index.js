@@ -19,7 +19,9 @@ export default function MachineForm() {
 
     const formData = new FormData(event.target);
     const machineAddData = Object.fromEntries(formData);
+    console;
     await trigger(machineAddData);
+
     event.target.reset();
   }
 
@@ -28,15 +30,15 @@ export default function MachineForm() {
       <h3>Add a new machine</h3>
       <label htmlFor="name">
         Machine Name:
-        <input type="text" name="name" id="name" />
+        <input type="text" name="machineName" id="name" />
       </label>
       <label htmlFor="settings">
         Machine Settings:
-        <input type="textarea" name="settings" id="settings" />
+        <textarea type="text" name="settings" id="settings" />
       </label>
       <label htmlFor="image">
         Machine Picture:
-        <input type="text" name="image" id="image" />
+        <input type="text" name="machineImage" id="image" />
       </label>
       <button type="submit">Submit</button>
     </form>

@@ -3,9 +3,9 @@ import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const machineSchema = new Schema({
-  machineName: { type: String, required: true },
-  settings: { type: String, required: true },
-  image: String,
+  machineName: String, //{ type: String, required: true },
+  settings: String, //{ type: String, required: true },
+  machineImage: String,
 });
 
 const Machine =
