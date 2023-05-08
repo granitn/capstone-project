@@ -8,5 +8,16 @@ export default async function handler(request, response) {
     return response.status(200).json(machines);
   }
 
+  if (request.method === "POST") {
+    try {
+      const machineAddData = request.body;
+      await Machine.create(machineAddData);
+
+      response.status(200).json({ message: "Machine added" });
+    } catch (error) {
+      console.log(error);
+      response.status(400).json({ error: error.message });
+    }
+  }
   response.status(404).json({ message: "Not found" });
 }

@@ -26,10 +26,6 @@ export default function MachineForm() {
   return (
     <form onSubmit={handleSubmit}>
       <h3>Add a new machine</h3>
-      <label htmlFor="image">
-        Machine Picture:
-        <input type="text" name="image" id="image" />
-      </label>
       <label htmlFor="name">
         Machine Name:
         <input type="text" name="name" id="name" />
@@ -37,6 +33,10 @@ export default function MachineForm() {
       <label htmlFor="settings">
         Machine Settings:
         <input type="textarea" name="settings" id="settings" />
+      </label>
+      <label htmlFor="image">
+        Machine Picture:
+        <input type="text" name="image" id="image" />
       </label>
       <button type="submit">Submit</button>
     </form>
