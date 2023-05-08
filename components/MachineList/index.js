@@ -1,5 +1,6 @@
 import useSWR from "swr";
 import MachineCard from "@/components/MachineCard";
+import { StyledList } from "./MachineList.styled";
 
 const fetcher = (url) => fetch(url).then((response) => response.json());
 
@@ -15,12 +16,12 @@ export default function MachineList() {
   //   console.log(data[1].settings);
   //   console.log(data[1].machineName);
   return (
-    <ul>
+    <StyledList>
       {data.map((machine) => (
         <li key={machine._id}>
           <MachineCard machine={machine} />
         </li>
       ))}
-    </ul>
+    </StyledList>
   );
 }
