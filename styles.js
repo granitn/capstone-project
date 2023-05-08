@@ -15,7 +15,7 @@ export default createGlobalStyle`
       5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
     
 
-    //--gap: 20px;
+
   }
   
   *,
@@ -25,12 +25,7 @@ export default createGlobalStyle`
   }
 
   body {
-    //display: grid;
-    //margin: auto;
-    font-family: system-ui;
 
-    //place-items: center;
-    //min-height: 100vh;
-    //max-width: 50rem;
+    font-family: system-ui;
   }
 `;
