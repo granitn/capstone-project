@@ -8,13 +8,11 @@ const StyledTextareaP = styled.p`
 `;
 
 const StyledName = styled.p`
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0;
   font-weight: 600;
 `;
 
 export default function MachineCard({ machine }) {
-  console.log(machine);
-
   return (
     <MachineEntry>
       <Image

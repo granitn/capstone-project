@@ -12,9 +12,7 @@ export default function MachineList() {
   if (!data) {
     return <div>loading...</div>;
   }
-  //   console.log(data);
-  //   console.log(data[1].settings);
-  //   console.log(data[1].machineName);
+
   return (
     <StyledList>
       {data.map((machine) => (
