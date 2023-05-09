@@ -1,12 +1,11 @@
 import MachineList from "@/components/MachineList";
-import MachineForm from "@/components/MachineForm";
+import { StyledHeader } from "@/components/Heading/Heading.Styled";
 export default function HomePage() {
   return (
-    <div>
-      <h1>My Machine settings</h1>
+    <>
+      <StyledHeader>My Machine settings</StyledHeader>
 
       <MachineList />
-      <MachineForm />
-    </div>
+    </>
   );
 }

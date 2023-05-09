@@ -1,5 +1,13 @@
 import useSWRMutation from "swr/mutation";
+import { useRouter } from "next/router";
+import { StyledForm } from "./MachineForm.Styled";
+import { FormLabel } from "./MachineForm.Styled";
+import { SubmitButton } from "./MachineForm.Styled";
+import { FormInput } from "./MachineForm.Styled";
+import { FormArea } from "./MachineForm.Styled";
+import { StyledButton } from "../Button/Button.styled";
 
+//sendrequest for form data
 async function sendRequest(url, { arg }) {
   const response = await fetch(url, {
     method: "POST",
@@ -13,7 +21,9 @@ async function sendRequest(url, { arg }) {
 
 export default function MachineForm() {
   const { trigger } = useSWRMutation("/api/machines", sendRequest);
+  const router = useRouter();
 
+  //submithandler for form data to trigger sendRequest
   async function handleSubmit(event) {
     event.preventDefault();
 
@@ -22,20 +32,21 @@ export default function MachineForm() {
 
     await trigger(machineAddData);
     console.log(machineAddData);
+    router.push("/");
 
-    //event.target.reset();
+    event.target.reset();
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h3>Add a new machine</h3>
-      <label htmlFor="name">
-        Machine Name:
-        <input type="text" name="machineName" id="name" required />
-      </label>
-      <label htmlFor="settings">
-        Machine Settings:
-        <textarea
+    <>
+      <StyledForm onSubmit={handleSubmit}>
+        <h2>Add a new machine</h2>
+        <FormLabel htmlFor="name">Machine Name:</FormLabel>
+
+        <FormInput type="text" name="machineName" id="name" required />
+        <FormLabel htmlFor="settings">Machine Settings:</FormLabel>
+
+        <FormArea
           type="text"
           name="settings"
           id="settings"
@@ -43,18 +54,19 @@ export default function MachineForm() {
           placeholder="seperate settings with linebreaks/enter"
           required
         />
-      </label>
-      <label htmlFor="image">
-        Machine Picture:
-        <input
+        <FormLabel htmlFor="image">Machine Picture:</FormLabel>
+        <FormInput
           type="url"
           name="machineImage"
           id="image"
           placeholder="image url from unsplash"
           pattern="https://images.unsplash.com/.*"
         />
-      </label>
-      <button type="submit">Submit</button>
-    </form>
+        <SubmitButton type="submit">Submit</SubmitButton>
+      </StyledForm>
+      <StyledButton type="button" onClick={() => router.push("/")}>
+        back
+      </StyledButton>
+    </>
   );
 }
