@@ -38,7 +38,7 @@ export default createGlobalStyle`
 
 
   #__next {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 `;

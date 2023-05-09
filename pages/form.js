@@ -1,6 +1,7 @@
 import MachineForm from "@/components/MachineForm";
 import { useRouter } from "next/router";
 import { StyledButton } from "@/components/Button/Button.styled";
+import { StyledLink } from "@/components/Link/Link.styled";
 
 export default function FormPage() {
   const router = useRouter();
@@ -8,9 +9,7 @@ export default function FormPage() {
   return (
     <>
       <MachineForm />
-      <StyledButton type="button" onClick={() => router.push("/")}>
-        back
-      </StyledButton>
+      <StyledLink href={"/"}>Back</StyledLink>
     </>
   );
 }

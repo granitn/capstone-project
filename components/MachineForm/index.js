@@ -1,11 +1,13 @@
 import useSWRMutation from "swr/mutation";
 import { useRouter } from "next/router";
-import { StyledForm } from "./MachineForm.Styled";
-import { FormLabel } from "./MachineForm.Styled";
-import { SubmitButton } from "./MachineForm.Styled";
-import { FormInput } from "./MachineForm.Styled";
-import { FormArea } from "./MachineForm.Styled";
-import { StyledButton } from "../Button/Button.styled";
+
+import {
+  FormLabel,
+  SubmitButton,
+  FormInput,
+  FormArea,
+  StyledForm,
+} from "./MachineForm.Styled";
 
 //sendrequest for form data
 async function sendRequest(url, { arg }) {
@@ -31,9 +33,8 @@ export default function MachineForm() {
     const machineAddData = Object.fromEntries(formData);
 
     await trigger(machineAddData);
-    console.log(machineAddData);
-    router.push("/");
 
+    router.push("/");
     event.target.reset();
   }
 
@@ -64,9 +65,6 @@ export default function MachineForm() {
         />
         <SubmitButton type="submit">Submit</SubmitButton>
       </StyledForm>
-      <StyledButton type="button" onClick={() => router.push("/")}>
-        back
-      </StyledButton>
     </>
   );
 }
