@@ -44,7 +44,7 @@ export default function MachineForm() {
         <FormLabel htmlFor="name">Machine Name:</FormLabel>
 
         <FormInput type="text" name="machineName" id="name" required />
-        <FormLabel htmlFor="settings">Machine Settings:</FormLabel>
+        <FormLabel htmlFor="settings">Settings:</FormLabel>
 
         <FormArea
           type="text"
@@ -54,7 +54,7 @@ export default function MachineForm() {
           placeholder="seperate settings with linebreaks/enter"
           required
         />
-        <FormLabel htmlFor="image">Machine Picture:</FormLabel>
+        <FormLabel htmlFor="image">Picture:</FormLabel>
         <FormInput
           type="url"
           name="machineImage"
