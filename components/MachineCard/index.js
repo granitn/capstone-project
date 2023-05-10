@@ -37,7 +37,7 @@ export default function MachineCard({ machine }) {
         src={machine.machineImage}
         alt="No image found"
         width={150}
-        height={100}
+        height={120}
       />
       <StyledName>{machine.machineName}</StyledName>
       <StyledTextareaP>{machine.settings}</StyledTextareaP>
