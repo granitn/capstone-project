@@ -2,6 +2,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import Image from "next/image";
 import { MachineEntry } from "./MachineCard.styled";
 import { DeleteButton } from "../Button/Button.styled";
+import { useRouter } from "next/router";
 
 const StyledTextareaP = styled.p`
   white-space: pre-line;
@@ -14,7 +15,7 @@ const StyledName = styled.p`
 `;
 
 export default function MachineCard({ machine }) {
-  console.log(machine);
+  const router = useRouter();
 
   async function handleDelete() {
     const response = await fetch(`/api/machines/${machine._id}`, {
@@ -23,6 +24,7 @@ export default function MachineCard({ machine }) {
 
     if (response.ok) {
       await response.json();
+      router.push("/");
     } else {
       console.error(`Error: ${response.status}`);
     }
