@@ -5,12 +5,14 @@ import { useRouter } from "next/router";
 
 export default function MachineList() {
   const router = useRouter();
-  const { data, error } = useSWR("/api/machines");
+  const { data, isLoading, error } = useSWR("/api/machines");
+
+  if (isLoading) return <div>Loading...</div>;
 
   if (error) return <div>failed to load</div>;
 
   if (!data) {
-    return <div>loading...</div>;
+    return;
   }
 
   return (
