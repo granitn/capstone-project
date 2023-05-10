@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 import { MachineEntry } from "./MachineCard.styled";
+import { DeleteButton } from "../Button/Button.styled";
 
 const StyledTextareaP = styled.p`
   white-space: pre-line;
@@ -15,6 +16,7 @@ const StyledName = styled.p`
 export default function MachineCard({ machine }) {
   return (
     <MachineEntry>
+      <DeleteButton>-</DeleteButton>
       <Image
         src={machine.machineImage}
         alt="No image found"

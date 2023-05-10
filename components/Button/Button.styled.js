@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+//for submit button
 export const StyledButton = styled.button`
   z-index: 2;
   cursor: pointer;
@@ -12,4 +13,18 @@ export const StyledButton = styled.button`
   width: 5rem;
   height: 2.5rem;
   border: none;
+`;
+
+//for delete button on card
+export const DeleteButton = styled.button`
+  border-radius: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--color-button-bg);
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
 `;

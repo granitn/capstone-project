@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const MachineEntry = styled.article`
   background-color: var(--color-card-bg);
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   border-radius: 1rem;
