@@ -3,6 +3,11 @@ import { createGlobalStyle } from "styled-components";
 export default createGlobalStyle`
 :root {
     --color-card-bg: hsla(200, 10%, 75%,0.7 );
+    --color-button-bg: hsla(200, 10%, 15%,1 );
+    --color-button-text: hsla(200, 10%, 95%,0.9 );
+    --color-button-text-shadow: hsla(200, 80%, 10%,1);
+
+    
     --shadow-color: 204deg 10% 25%;
     --shadow-elevation-low:
       0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
@@ -18,6 +23,8 @@ export default createGlobalStyle`
 
   }
   
+
+
   *,
   *::before,
   *::after {
@@ -25,7 +32,13 @@ export default createGlobalStyle`
   }
 
   body {
-
+    margin: 0;
     font-family: system-ui;
   }
+
+
+  #__next {
+  min-height: 100vh;
+}
+
 `;

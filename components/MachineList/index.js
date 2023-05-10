@@ -1,11 +1,11 @@
 import useSWR from "swr";
 import MachineCard from "@/components/MachineCard";
 import { StyledList } from "./MachineList.styled";
-
-const fetcher = (url) => fetch(url).then((response) => response.json());
+import { useRouter } from "next/router";
 
 export default function MachineList() {
-  const { data, error } = useSWR("/api/machines", fetcher);
+  const router = useRouter();
+  const { data, error } = useSWR("/api/machines");
 
   if (error) return <div>failed to load</div>;
 
