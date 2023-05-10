@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import Image from "next/image";
 import { MachineEntry } from "./MachineCard.styled";
 import { DeleteButton } from "../Button/Button.styled";
@@ -14,9 +14,23 @@ const StyledName = styled.p`
 `;
 
 export default function MachineCard({ machine }) {
+  console.log(machine);
+
+  async function handleDelete() {
+    const response = await fetch(`/api/machines/${machine._id}`, {
+      method: "DELETE",
+    });
+
+    if (response.ok) {
+      await response.json();
+    } else {
+      console.error(`Error: ${response.status}`);
+    }
+  }
+
   return (
     <MachineEntry>
-      <DeleteButton>-</DeleteButton>
+      <DeleteButton onClick={handleDelete}>-</DeleteButton>
       <Image
         src={machine.machineImage}
         alt="No image found"
