@@ -7,9 +7,13 @@ export default function MachineList() {
   const router = useRouter();
   const { data, isLoading, error } = useSWR("/api/machines");
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
-  if (error) return <div>failed to load</div>;
+  if (error) {
+    return <div>failed to load</div>;
+  }
 
   if (!data) {
     return;
