@@ -32,7 +32,9 @@ export default function MachineCard({ machine }) {
 
   return (
     <MachineEntry>
-      <DeleteButton onClick={handleDelete}>-</DeleteButton>
+      <DeleteButton aria-label="Delete" onClick={handleDelete}>
+        -
+      </DeleteButton>
       <Image
         src={machine.machineImage}
         alt="No image found"
