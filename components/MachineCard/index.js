@@ -14,6 +14,13 @@ const StyledName = styled.p`
   font-weight: 600;
 `;
 
+const StyledImage = styled(Image)`
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  top: -3rem;
+`;
+
 export default function MachineCard({ machine }) {
   const { mutate } = useSWR("/api/machines");
 
@@ -35,11 +42,11 @@ export default function MachineCard({ machine }) {
       <DeleteButton aria-label="Delete" onClick={handleDelete}>
         -
       </DeleteButton>
-      <Image
+      <StyledImage
         src={machine.machineImage}
         alt="No image found"
         width={150}
-        height={120}
+        height={150}
       />
       <StyledName>{machine.machineName}</StyledName>
       <StyledTextareaP>{machine.settings}</StyledTextareaP>

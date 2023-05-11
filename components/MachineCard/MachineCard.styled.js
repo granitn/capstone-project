@@ -8,7 +8,7 @@ export const MachineEntry = styled.article`
   align-items: center;
   border-radius: 1rem;
   padding-top: 1rem;
-  width: 80%;
+  width: 20rem;
   box-shadow: var(--shadow-elevation-medium);
   margin: auto;
 `;
