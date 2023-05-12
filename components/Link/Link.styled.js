@@ -29,6 +29,6 @@ export const EditButton = styled(Link)`
   font-size: 1rem;
   color: var(--color-button-bg);
   background-color: var(--color-button-text);
-  padding-left: 0.12rem;
-  padding-top: 0.12rem;
+  text-align: center;
+  line-height: 1.5rem;
 `;

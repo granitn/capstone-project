@@ -1,4 +1,3 @@
-import useSWRMutation from "swr/mutation";
 import {
   FormLabel,
   SubmitButton,
@@ -12,7 +11,7 @@ export default function MachineForm({ onSubmit, machine }) {
     <>
       <StyledForm onSubmit={onSubmit}>
         <h2>{machine ? "Edit Machine" : "Add new Machine"}</h2>
-        <FormLabel htmlFor="name">Machine Name:</FormLabel>
+        <FormLabel htmlFor="name">Machine Name</FormLabel>
 
         <FormInput
           type="text"
@@ -21,7 +20,9 @@ export default function MachineForm({ onSubmit, machine }) {
           defaultValue={machine?.machineName}
           required
         />
-        <FormLabel htmlFor="settings">Settings:</FormLabel>
+        <FormLabel htmlFor="settings">
+          {machine ? "Change Settings" : "Space for your Settings"}
+        </FormLabel>
 
         <FormArea
           type="text"
@@ -32,7 +33,7 @@ export default function MachineForm({ onSubmit, machine }) {
           defaultValue={machine?.settings}
           required
         />
-        <FormLabel htmlFor="image">Picture:</FormLabel>
+        <FormLabel htmlFor="image">Picture</FormLabel>
         <FormInput
           type="url"
           name="machineImage"
