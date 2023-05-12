@@ -1,6 +1,5 @@
 import useSWRMutation from "swr/mutation";
 import { useRouter } from "next/router";
-
 import {
   FormLabel,
   SubmitButton,
@@ -10,37 +9,37 @@ import {
 } from "./MachineForm.Styled";
 
 //sendrequest for form data
-async function sendRequest(url, { arg }) {
-  const response = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(arg),
-  });
-  return response.json();
-}
+// async function sendRequest(url, { arg }) {
+//   const response = await fetch(url, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(arg),
+//   });
+//   return response.json();
+// }
 
-export default function MachineForm() {
-  const { trigger } = useSWRMutation("/api/machines", sendRequest);
+export default function MachineForm({ onSubmit }) {
+  // const { trigger } = useSWRMutation("/api/machines", sendRequest);
   const router = useRouter();
 
   //submithandler for form data to trigger sendRequest
-  async function handleSubmit(event) {
-    event.preventDefault();
+  // async function handleSubmit(event) {
+  //   event.preventDefault();
 
-    const formData = new FormData(event.target);
-    const machineAddData = Object.fromEntries(formData);
+  //   const formData = new FormData(event.target);
+  //   const machineAddData = Object.fromEntries(formData);
 
-    await trigger(machineAddData);
+  //   await trigger(machineAddData);
 
-    router.push("/");
-    event.target.reset();
-  }
+  //   router.push("/");
+  //   event.target.reset();
+  // }
 
   return (
     <>
-      <StyledForm onSubmit={handleSubmit}>
+      <StyledForm onSubmit={onSubmit}>
         <h2>Add a new machine</h2>
         <FormLabel htmlFor="name">Machine Name:</FormLabel>
 

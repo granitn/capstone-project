@@ -19,6 +19,7 @@ const StyledImage = styled(Image)`
   border-radius: 50%;
   position: relative;
   top: -3rem;
+  box-shadow: var(--shadow-elevation-medium);
 `;
 
 export default function MachineCard({ machine }) {
