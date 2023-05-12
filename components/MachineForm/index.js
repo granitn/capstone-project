@@ -1,5 +1,5 @@
 import useSWRMutation from "swr/mutation";
-import { useRouter } from "next/router";
+
 import {
   FormLabel,
   SubmitButton,
@@ -22,7 +22,6 @@ import {
 
 export default function MachineForm({ onSubmit }) {
   // const { trigger } = useSWRMutation("/api/machines", sendRequest);
-  const router = useRouter();
 
   //submithandler for form data to trigger sendRequest
   // async function handleSubmit(event) {

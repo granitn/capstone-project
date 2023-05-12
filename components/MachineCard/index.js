@@ -1,8 +1,9 @@
 import styled, { createGlobalStyle } from "styled-components";
 import Image from "next/image";
 import { MachineEntry } from "./MachineCard.styled";
-import { DeleteButton } from "../Button/Button.styled";
+import { DeleteButton, EditButton } from "../Button/Button.styled";
 import useSWR from "swr";
+import { BsFillGearFill } from "react-icons/bs";
 
 const StyledTextareaP = styled.p`
   white-space: pre-line;
@@ -43,6 +44,10 @@ export default function MachineCard({ machine }) {
       <DeleteButton aria-label="Delete" onClick={handleDelete}>
         -
       </DeleteButton>
+      <EditButton aria-label="Edit">
+        {" "}
+        <BsFillGearFill />
+      </EditButton>
       <StyledImage
         src={machine.machineImage}
         alt="No image found"
