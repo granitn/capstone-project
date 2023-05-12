@@ -1,6 +1,7 @@
 import dbConnect from "@/db/connect";
 import Machine from "@/db/models/Machine";
 
+//_id independent routes
 export default async function handler(request, response) {
   await dbConnect();
 

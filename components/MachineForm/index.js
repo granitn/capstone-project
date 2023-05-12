@@ -1,5 +1,4 @@
 import useSWRMutation from "swr/mutation";
-
 import {
   FormLabel,
   SubmitButton,
@@ -8,41 +7,20 @@ import {
   StyledForm,
 } from "./MachineForm.Styled";
 
-//sendrequest for form data
-// async function sendRequest(url, { arg }) {
-//   const response = await fetch(url, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(arg),
-//   });
-//   return response.json();
-// }
-
-export default function MachineForm({ onSubmit }) {
-  // const { trigger } = useSWRMutation("/api/machines", sendRequest);
-
-  //submithandler for form data to trigger sendRequest
-  // async function handleSubmit(event) {
-  //   event.preventDefault();
-
-  //   const formData = new FormData(event.target);
-  //   const machineAddData = Object.fromEntries(formData);
-
-  //   await trigger(machineAddData);
-
-  //   router.push("/");
-  //   event.target.reset();
-  // }
-
+export default function MachineForm({ onSubmit, machine }) {
   return (
     <>
       <StyledForm onSubmit={onSubmit}>
-        <h2>Add a new machine</h2>
+        <h2>{machine ? "Edit Machine" : "Add new Machine"}</h2>
         <FormLabel htmlFor="name">Machine Name:</FormLabel>
 
-        <FormInput type="text" name="machineName" id="name" required />
+        <FormInput
+          type="text"
+          name="machineName"
+          id="name"
+          defaultValue={machine?.machineName}
+          required
+        />
         <FormLabel htmlFor="settings">Settings:</FormLabel>
 
         <FormArea
@@ -51,6 +29,7 @@ export default function MachineForm({ onSubmit }) {
           id="settings"
           rows="4"
           placeholder="seperate settings with linebreaks/enter"
+          defaultValue={machine?.settings}
           required
         />
         <FormLabel htmlFor="image">Picture:</FormLabel>
@@ -58,6 +37,7 @@ export default function MachineForm({ onSubmit }) {
           type="url"
           name="machineImage"
           id="image"
+          defaultValue={machine?.machineImage}
           placeholder="image url from unsplash"
           pattern="https://images.unsplash.com/.*"
         />

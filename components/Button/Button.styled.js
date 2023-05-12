@@ -28,17 +28,3 @@ export const DeleteButton = styled.button`
   font-size: 1rem;
   text-align: center;
 `;
-
-export const EditButton = styled.button`
-  border-radius: 2rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 2px solid var(--color-button-bg);
-  position: absolute;
-  right: 0.5rem;
-  top: 2.2rem;
-  font-weight: bold;
-  font-size: 1rem;
-  padding: 0;
-  padding-top: 0.1rem;
-`;
