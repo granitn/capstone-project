@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 
 import { StyledLink } from "@/components/Link/Link.styled";
 import useSWRMutation from "swr/mutation";
+import UploadForm from "@/components/UploadForm";
 
 // uses handed data and url in useSWRMutation to add machine via api/machines POST route
 async function sendRequest(url, { arg }) {
@@ -37,6 +38,7 @@ export default function FormPage() {
   return (
     <>
       <MachineForm onSubmit={handleAddSubmit} />
+      <UploadForm />
       <StyledLink href={"/"}>Back</StyledLink>
     </>
   );
