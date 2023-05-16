@@ -59,8 +59,8 @@ export default function MachineCard({ machine }) {
       <StyledImage
         src={machine.machineImage}
         alt="No image found"
-        width={150}
-        height={150}
+        width={200}
+        height={200}
       />
       <StyledName>{machine.machineName}</StyledName>
       <StyledTextareaP>{machine.settings}</StyledTextareaP>

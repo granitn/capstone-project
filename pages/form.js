@@ -1,6 +1,6 @@
 import MachineForm from "@/components/MachineForm";
 import { useRouter } from "next/router";
-
+import { useState } from "react";
 import { StyledLink } from "@/components/Link/Link.styled";
 import useSWRMutation from "swr/mutation";
 import UploadForm from "@/components/UploadForm";
@@ -18,6 +18,7 @@ async function sendRequest(url, { arg }) {
 }
 
 export default function FormPage() {
+  const [imageUrl, setImageUrl] = useState(null);
   const { trigger } = useSWRMutation("/api/machines", sendRequest);
   const router = useRouter();
 
@@ -28,6 +29,10 @@ export default function FormPage() {
     const formData = new FormData(event.target);
     const machineAddData = Object.fromEntries(formData);
 
+    if (imageUrl) {
+      machineAddData.machineImage = imageUrl;
+    }
+
     //hands data to sendRequest function
     await trigger(machineAddData);
 
@@ -35,10 +40,14 @@ export default function FormPage() {
     event.target.reset();
   }
 
+  function handleImageUpload(url) {
+    setImageUrl(url);
+  }
+
   return (
     <>
-      <MachineForm onSubmit={handleAddSubmit} />
-      <UploadForm />
+      <MachineForm onSubmit={handleAddSubmit} imageThere={imageUrl} />
+      <UploadForm onUpload={handleImageUpload} />
       <StyledLink href={"/"}>Back</StyledLink>
     </>
   );

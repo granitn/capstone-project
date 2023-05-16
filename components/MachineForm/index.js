@@ -6,7 +6,7 @@ import {
   StyledForm,
 } from "./MachineForm.Styled";
 
-export default function MachineForm({ onSubmit, machine }) {
+export default function MachineForm({ onSubmit, machine, imageThere }) {
   return (
     <>
       <StyledForm onSubmit={onSubmit}>
@@ -33,15 +33,19 @@ export default function MachineForm({ onSubmit, machine }) {
           defaultValue={machine?.settings}
           required
         />
-        <FormLabel htmlFor="image">Picture</FormLabel>
-        <FormInput
-          type="url"
-          name="machineImage"
-          id="image"
-          defaultValue={machine?.machineImage}
-          placeholder="image url from unsplash"
-          pattern="https://images.unsplash.com/.*"
-        />
+        {!imageThere && (
+          <>
+            <FormLabel htmlFor="image">Picture</FormLabel>
+            <FormInput
+              type="url"
+              name="machineImage"
+              id="image"
+              defaultValue={machine?.machineImage}
+              placeholder="image url from unsplash"
+              pattern="https://images.unsplash.com/.*"
+            />
+          </>
+        )}
         <SubmitButton type="submit">Submit</SubmitButton>
       </StyledForm>
     </>
