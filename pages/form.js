@@ -18,7 +18,7 @@ async function sendRequest(url, { arg }) {
 }
 
 export default function FormPage() {
-  const [imageUrl, setImageUrl] = useState(null);
+  const [imageUrl, setImageUrl] = useState("");
   const { trigger } = useSWRMutation("/api/machines", sendRequest);
   const router = useRouter();
 

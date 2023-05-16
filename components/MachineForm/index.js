@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   FormLabel,
   SubmitButton,
@@ -5,8 +6,22 @@ import {
   FormArea,
   StyledForm,
 } from "./MachineForm.Styled";
+import { useState } from "react";
 
-export default function MachineForm({ onSubmit, machine, imageThere }) {
+export default function MachineForm({
+  onSubmit,
+  machine,
+  imageThere,
+  imageUrl,
+}) {
+  const [pictureDefault, setPictureDefault] = useState(
+    imageUrl || machine?.machineImage
+  );
+
+  useEffect(() => {
+    setPictureDefault(imageUrl || machine?.machineImage);
+  }, [imageUrl, machine?.machineImage]);
+
   return (
     <>
       <StyledForm onSubmit={onSubmit}>
@@ -40,9 +55,11 @@ export default function MachineForm({ onSubmit, machine, imageThere }) {
               type="url"
               name="machineImage"
               id="image"
-              defaultValue={machine?.machineImage}
+              value={pictureDefault}
+              onChange={(e) => setPictureDefault(e.target.value)}
+              // defaultValue={pictureDefault ? machine?.machineImage : imageUrl}
               placeholder="image url from unsplash"
-              pattern="https://images.unsplash.com/.*"
+              // pattern="(https://images.unsplash.com/.*) | (https://res.cloudinary.com/dko3rskom/.*)"
             />
           </>
         )}
