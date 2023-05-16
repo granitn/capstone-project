@@ -7,6 +7,7 @@ import {
   StyledForm,
 } from "./MachineForm.Styled";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function MachineForm({
   onSubmit,
@@ -48,7 +49,7 @@ export default function MachineForm({
           defaultValue={machine?.settings}
           required
         />
-        {!imageThere && (
+        {machine && (
           <>
             <FormLabel htmlFor="image">Picture</FormLabel>
             <FormInput
@@ -62,6 +63,14 @@ export default function MachineForm({
               // pattern="(https://images.unsplash.com/.*) | (https://res.cloudinary.com/dko3rskom/.*)"
             />
           </>
+        )}
+        {imageThere && (
+          <Image
+            src={imageThere}
+            width={100}
+            height={100}
+            alt="Your uploaded image"
+          ></Image>
         )}
         <SubmitButton type="submit">Submit</SubmitButton>
       </StyledForm>
