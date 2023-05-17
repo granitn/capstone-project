@@ -5,6 +5,7 @@ import { DeleteButton } from "../Button/Button.styled";
 import { EditButton } from "../Link/Link.styled";
 import useSWR from "swr";
 import { BsFillGearFill } from "react-icons/bs";
+import { StyledImage } from "./MachineCard.styled";
 
 //styled components only used in card
 const StyledTextareaP = styled.p`
@@ -17,13 +18,13 @@ const StyledName = styled.p`
   font-weight: 600;
 `;
 
-const StyledImage = styled(Image)`
-  object-fit: cover;
-  border-radius: 50%;
-  position: relative;
-  top: -3rem;
-  box-shadow: var(--shadow-elevation-medium);
-`;
+// const StyledImage = styled(Image)`
+//   object-fit: cover;
+//   border-radius: 50%;
+//   position: relative;
+//   top: -3rem;
+//   box-shadow: var(--shadow-elevation-medium);
+// `;
 
 export default function MachineCard({ machine }) {
   const { mutate } = useSWR("/api/machines");

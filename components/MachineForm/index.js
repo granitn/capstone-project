@@ -66,6 +66,7 @@ export default function MachineForm({
         )}
         {imageThere && (
           <Image
+            style={{ objectFit: "cover", borderRadius: "50%" }}
             src={imageThere}
             width={100}
             height={100}

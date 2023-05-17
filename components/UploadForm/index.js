@@ -1,6 +1,11 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { StyledButton } from "../Button/Button.styled";
+import { StyledImageForm } from "../UploadForm/UploadForm.styled";
+
+const StyledUploadHeader = styled.h2`
+  text-align: center;
+`;
 
 const ImageInput = styled.input`
   display: none;
@@ -64,8 +69,8 @@ export default function UploadForm({ onUpload }) {
 
   return (
     <>
-      <h2>Image Upload</h2>
-      <form onSubmit={handleFileUpload}>
+      <StyledUploadHeader>Image Upload</StyledUploadHeader>
+      <StyledImageForm onSubmit={handleFileUpload}>
         <p>
           <ImageLabel htmlFor="imageInput">please choose an image</ImageLabel>
         </p>
@@ -73,7 +78,7 @@ export default function UploadForm({ onUpload }) {
         <UploadButton type="submit" disabled={!image}>
           {isUploading ? "Uploading..." : "Upload"}
         </UploadButton>
-      </form>
+      </StyledImageForm>
     </>
   );
 }
