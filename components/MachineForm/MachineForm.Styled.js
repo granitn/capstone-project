@@ -6,7 +6,7 @@ export const StyledForm = styled.form`
   align-items: center;
   box-shadow: var(--shadow-elevation-medium);
   border-radius: 2rem;
-  min-height: 70vh;
+  min-height: 60vh;
   width: 90vw;
   margin: 2rem auto;
   gap: 0.8rem;

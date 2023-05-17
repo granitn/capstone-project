@@ -6,9 +6,9 @@ export const StyledImageForm = styled.form`
   align-items: center;
   box-shadow: var(--shadow-elevation-medium);
   border-radius: 2rem;
-  min-height: 30vh;
+  min-height: 20vh;
   width: 90vw;
-  margin: 2rem auto;
+  margin: 1rem auto 2rem;
   gap: 0.8rem;
   background-color: var(--color-card-bg);
 `;

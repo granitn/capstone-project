@@ -62,6 +62,18 @@ export default function MachineForm({
               placeholder="image url from unsplash"
               // pattern="(https://images.unsplash.com/.*) | (https://res.cloudinary.com/dko3rskom/.*)"
             />
+            {machine.machineImage && (
+              <>
+                <label> current image</label>
+                <Image
+                  style={{ objectFit: "cover", borderRadius: "50%" }}
+                  src={machine?.machineImage}
+                  width={100}
+                  height={100}
+                  alt="Cards current image "
+                ></Image>
+              </>
+            )}
           </>
         )}
         {imageThere && (
