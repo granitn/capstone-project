@@ -6,6 +6,7 @@ export default createGlobalStyle`
     --color-button-bg: hsla(200, 10%, 15%,1 );
     --color-button-text: hsla(200, 10%, 95%,0.9 );
     --color-button-text-shadow: hsla(200, 80%, 10%,1);
+    --color-button-disabled: hsla(200, 10%, 95%,0.5 );
 
     
     --shadow-color: 204deg 10% 25%;

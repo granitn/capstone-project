@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 
 export const MachineEntry = styled.article`
   background-color: var(--color-card-bg);
@@ -11,4 +12,12 @@ export const MachineEntry = styled.article`
   width: 20rem;
   box-shadow: var(--shadow-elevation-medium);
   margin: auto;
+`;
+
+export const StyledImage = styled(Image)`
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  top: -3rem;
+  box-shadow: var(--shadow-elevation-medium);
 `;

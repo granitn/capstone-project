@@ -3,6 +3,8 @@ import useSWRMutation from "swr/mutation";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import { StyledLink } from "@/components/Link/Link.styled";
+import UploadForm from "@/components/UploadForm";
+import { useState } from "react";
 
 // uses handed data and url in useSWRMutation
 // to update machine via api/machines/[id] PUT route
@@ -35,6 +37,8 @@ export default function CardEditPage() {
     updateMachine
   );
 
+  const [imageUrl, setImageUrl] = useState("");
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -58,13 +62,22 @@ export default function CardEditPage() {
     router.push("/");
   }
 
+  function handleImageUpload(url) {
+    setImageUrl(url);
+  }
+
   if (isMutating) {
     return <div>changing Settings...</div>;
   }
 
   return (
     <>
-      <MachineForm onSubmit={handleEditMachine} machine={data} />
+      <MachineForm
+        onSubmit={handleEditMachine}
+        machine={data}
+        imageUrl={imageUrl}
+      />
+      <UploadForm onUpload={handleImageUpload} />
       <StyledLink href={"/"}>Back</StyledLink>
     </>
   );
