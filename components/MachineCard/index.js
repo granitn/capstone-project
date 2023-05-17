@@ -18,14 +18,6 @@ const StyledName = styled.p`
   font-weight: 600;
 `;
 
-// const StyledImage = styled(Image)`
-//   object-fit: cover;
-//   border-radius: 50%;
-//   position: relative;
-//   top: -3rem;
-//   box-shadow: var(--shadow-elevation-medium);
-// `;
-
 export default function MachineCard({ machine }) {
   const { mutate } = useSWR("/api/machines");
 

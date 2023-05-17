@@ -76,7 +76,6 @@ export default function CardEditPage() {
         onSubmit={handleEditMachine}
         machine={data}
         imageUrl={imageUrl}
-        imageThere={imageUrl}
       />
       <UploadForm onUpload={handleImageUpload} />
       <StyledLink href={"/"}>Back</StyledLink>

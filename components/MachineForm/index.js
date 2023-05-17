@@ -12,7 +12,7 @@ import Image from "next/image";
 export default function MachineForm({
   onSubmit,
   machine,
-  imageThere,
+
   imageUrl,
 }) {
   const [pictureDefault, setPictureDefault] = useState(
@@ -58,9 +58,7 @@ export default function MachineForm({
               id="image"
               value={pictureDefault}
               onChange={(e) => setPictureDefault(e.target.value)}
-              // defaultValue={pictureDefault ? machine?.machineImage : imageUrl}
               placeholder="image url from unsplash"
-              // pattern="(https://images.unsplash.com/.*) | (https://res.cloudinary.com/dko3rskom/.*)"
             />
             {machine.machineImage && (
               <>
@@ -70,20 +68,23 @@ export default function MachineForm({
                   src={machine?.machineImage}
                   width={100}
                   height={100}
-                  alt="Cards current image "
-                ></Image>
+                  alt="Cards current image"
+                />
               </>
             )}
           </>
         )}
-        {imageThere && (
-          <Image
-            style={{ objectFit: "cover", borderRadius: "50%" }}
-            src={imageThere}
-            width={100}
-            height={100}
-            alt="Your uploaded image"
-          ></Image>
+        {imageUrl && (
+          <>
+            <label>new image </label>
+            <Image
+              style={{ objectFit: "cover", borderRadius: "50%" }}
+              src={imageUrl}
+              width={100}
+              height={100}
+              alt="Your uploaded image"
+            />
+          </>
         )}
         <SubmitButton type="submit">Submit</SubmitButton>
       </StyledForm>

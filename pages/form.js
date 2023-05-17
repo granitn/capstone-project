@@ -46,7 +46,7 @@ export default function FormPage() {
 
   return (
     <>
-      <MachineForm onSubmit={handleAddSubmit} imageThere={imageUrl} />
+      <MachineForm onSubmit={handleAddSubmit} imageUrl={imageUrl} />
       <UploadForm onUpload={handleImageUpload} />
       <StyledLink href={"/"}>Back</StyledLink>
     </>
