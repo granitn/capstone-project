@@ -78,7 +78,7 @@ export default function CardEditPage() {
         imageUrl={imageUrl}
       />
       <UploadForm onUpload={handleImageUpload} />
-      <StyledLink href={"/"}>Back</StyledLink>
+      <StyledLink href={"/list"}>Back</StyledLink>
     </>
   );
 }
