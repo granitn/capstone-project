@@ -6,4 +6,5 @@ export const StyledLinkContainer = styled.div`
   grid-template-rows: repeat(7, 1fr);
   gap: 1rem;
   min-height: 100vh;
+  background-color: var(--color-link-list);
 `;

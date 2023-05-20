@@ -5,7 +5,7 @@ export default function NavLinkContainer() {
   return (
     <div>
       <StyledLinkContainer>
-        <NavLink href={"/list"}>List</NavLink>
+        <NavLink href={"/list"}>Machines</NavLink>
       </StyledLinkContainer>
     </div>
   );

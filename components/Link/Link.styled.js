@@ -55,7 +55,7 @@ export const NavLink = styled(Link)`
   justify-content: center;
   text-decoration: none;
   font-weight: bold;
-  background-color: var(--color-link-list);
+  background-color: var(--color-link1-list);
   border-radius: 1rem;
   font-size: 2rem;
   grid-area: 2/ 2 / 3 / 3;
