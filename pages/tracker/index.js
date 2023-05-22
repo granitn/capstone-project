@@ -3,15 +3,18 @@ import { IateButton } from "@/components/Link/Link.styled";
 import { DeleteLastMealButton } from "@/components/Button/Button.styled";
 import styled from "styled-components";
 
-export const StyledProtein = styled.p`
-  font-size: 2rem;
+const StyledProtein = styled.p`
+  font-size: 1rem;
 `;
-export const StyledCarbs = styled.p`
-  font-size: 2rem;
+const StyledCarbs = styled.p`
+  font-size: 1rem;
+`;
+const StyledFat = styled.p`
+  font-size: 1rem;
 `;
 
-export const StyledFat = styled.p`
-  font-size: 2rem;
+const GridWrapper = styled.div`
+  display: grid;
 `;
 
 export default function Tracker({ todaysIntakes, goal, intakes, setIntakes }) {
