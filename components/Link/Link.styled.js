@@ -48,17 +48,59 @@ export const EditButton = styled(Link)`
   text-align: center;
   line-height: 1.5rem;
 `;
-
-export const NavLink = styled(Link)`
+// for "Machines" 'button'
+export const NavLinkMachines = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   font-weight: bold;
-  background-color: var(--color-link1-list);
+  background-color: var(--color-linkOne-list);
   border-radius: 1rem;
   font-size: 2rem;
   grid-area: 2/ 2 / 3 / 3;
+
+  box-shadow: var(--shadow-elevation-medium);
+  color: var(--color-link-text);
+
+  &:hover {
+    background-color: var(--color-button-bg);
+    color: var(--color-button-text);
+  }
+`;
+
+// for "Tracker" 'button'
+export const NavLinkTracker = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: var(--color-linkTwo-list);
+  border-radius: 1rem;
+  font-size: 2rem;
+  grid-area: 6/ 2 / 7 / 3;
+
+  box-shadow: var(--shadow-elevation-medium);
+  color: var(--color-link-text);
+
+  &:hover {
+    background-color: var(--color-button-bg);
+    color: var(--color-button-text);
+  }
+`;
+
+// for "I ate" 'button'
+export const IateButton = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: var(--color-linkTwo-list);
+  border-radius: 1rem;
+  font-size: 2rem;
+  grid-area: 6/ 2 / 7 / 3;
 
   box-shadow: var(--shadow-elevation-medium);
   color: var(--color-link-text);

@@ -8,7 +8,10 @@ export default createGlobalStyle`
     --color-button-text-shadow: hsla(200, 80%, 10%,1);
     --color-button-disabled: hsla(200, 10%, 95%,0.5 );
     --color-link-list: #809A6F;
-    --color-link1-list: #FEE8B0;
+    --color-linkOne-list: #FEE8B0;
+    --color-linkTwo-list: #F97B22;
+    --color-DelMeal-button:hsla(200, 10%, 15%,1 );
+    --color-DelMeal-button-text:#FEE8B0;
     
     --shadow-color: 204deg 10% 25%;
     --shadow-elevation-low:
