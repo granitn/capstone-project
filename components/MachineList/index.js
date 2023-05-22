@@ -4,7 +4,6 @@ import { StyledList } from "./MachineList.styled";
 import { useRouter } from "next/router";
 
 export default function MachineList() {
-  const router = useRouter();
   const { data, isLoading, error } = useSWR("/api/machines");
 
   if (isLoading) {

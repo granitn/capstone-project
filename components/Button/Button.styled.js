@@ -27,4 +27,5 @@ export const DeleteButton = styled.button`
   font-weight: bold;
   font-size: 1rem;
   text-align: center;
+  cursor: pointer;
 `;

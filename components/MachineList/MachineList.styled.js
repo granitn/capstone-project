@@ -8,5 +8,5 @@ export const StyledList = styled.ul`
   gap: 4rem;
   padding-left: 0;
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 3rem;
 `;

@@ -1,14 +1,5 @@
-import MachineList from "@/components/MachineList";
-import { StyledHeader } from "@/components/Heading/Heading.Styled";
-import { StyledLink } from "@/components/Link/Link.styled";
-export default function HomePage() {
-  return (
-    <>
-      <StyledHeader>My Machine settings</StyledHeader>
+import NavLinkContainer from "@/components/NavLinContainer";
 
-      <MachineList />
-
-      <StyledLink href={"/form"}>Add</StyledLink>
-    </>
-  );
+export default function LandingPage() {
+  return <NavLinkContainer />;
 }
