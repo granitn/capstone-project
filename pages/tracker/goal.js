@@ -12,7 +12,7 @@ export default function Goal({ setGoal }) {
     event.target.reset();
     router.push("/tracker");
   }
-  //console.log(router.pathname);
+
   return (
     <div>
       <IntakeForm onsubmit={handleSubmit} pageCheck={router.pathname} />
