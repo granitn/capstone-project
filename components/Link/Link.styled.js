@@ -14,6 +14,7 @@ export const StyledLink = styled(Link)`
   border-radius: 2rem;
   width: 5rem;
   height: 2.5rem;
+  box-shadow: var(--shadow-elevation-high);
 `;
 // for "Add" 'button'
 export const StyledAddLink = styled(Link)`
@@ -29,6 +30,7 @@ export const StyledAddLink = styled(Link)`
   border-radius: 2rem;
   width: 5rem;
   height: 2.5rem;
+  box-shadow: var(--shadow-elevation-high);
 `;
 
 //for edit (gear icon) 'button'

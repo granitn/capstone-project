@@ -49,12 +49,14 @@ export default function MachineCard({ machine }) {
         {" "}
         <BsFillGearFill />
       </EditButton>
-      <StyledImage
-        src={machine.machineImage}
-        alt="No image found"
-        width={200}
-        height={200}
-      />
+      {machine.machineImage && (
+        <StyledImage
+          src={machine.machineImage}
+          alt="No image found"
+          width={200}
+          height={200}
+        />
+      )}
       <StyledName>{machine.machineName}</StyledName>
       <StyledTextareaP>{machine.settings}</StyledTextareaP>
     </MachineEntry>

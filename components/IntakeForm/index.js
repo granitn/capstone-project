@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { TrackerForm } from "./IntakeForm.styled";
+import { SubmitButton } from "../MachineForm/MachineForm.Styled";
+import { FormInput } from "../MachineForm/MachineForm.Styled";
 
 export default function IntakeForm({ onsubmit }) {
   const [carbs, setCarbs] = useState("");
@@ -30,12 +33,12 @@ export default function IntakeForm({ onsubmit }) {
 
   return (
     <>
-      <form onSubmit={onsubmit}>
+      <TrackerForm onSubmit={onsubmit}>
         <h2>My Intake</h2>
         <label htmlFor="kcal">Kcal: </label>
-        <input type="number" name="kcal" id="kcal" value={kcal} readOnly />
+        <FormInput type="number" name="kcal" id="kcal" value={kcal} readOnly />
         <label htmlFor="InCarbs">Carbs: </label>
-        <input
+        <FormInput
           type="number"
           name="carbs"
           id="carbs"
@@ -45,7 +48,7 @@ export default function IntakeForm({ onsubmit }) {
           required
         />
         <label htmlFor="InProtein">Protein: </label>
-        <input
+        <FormInput
           type="number"
           name="protein"
           id="protein"
@@ -55,7 +58,7 @@ export default function IntakeForm({ onsubmit }) {
           required
         />
         <label htmlFor="InFat">Fat: </label>
-        <input
+        <FormInput
           type="number"
           name="fat"
           id="fat"
@@ -64,8 +67,8 @@ export default function IntakeForm({ onsubmit }) {
           placeholder="in grams"
           required
         />
-        <button type="submit">Submit</button>
-      </form>
+        <SubmitButton type="submit">Submit</SubmitButton>
+      </TrackerForm>
     </>
   );
 }

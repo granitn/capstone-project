@@ -36,4 +36,10 @@ export const DeleteLastMealButton = styled.button`
   border: none;
   background-color: var(--color-DelMeal-button);
   color: var(--color-DelMeal-button-text);
+  grid-area: 6/3/7/4;
+  box-shadow: var(--shadow-elevation-medium);
+
+  &:hover {
+    color: #d61c4e;
+  }
 `;

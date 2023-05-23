@@ -11,7 +11,9 @@ export default createGlobalStyle`
     --color-linkOne-list: #FEE8B0;
     --color-linkTwo-list: #F97B22;
     --color-DelMeal-button:hsla(200, 10%, 15%,1 );
-    --color-DelMeal-button-text:#FEE8B0;
+    --color-DelMeal-button-text: silver;
+    --color-tracker-bg: #F3DEBA;
+
     
     --shadow-color: 204deg 10% 25%;
     --shadow-elevation-low:
