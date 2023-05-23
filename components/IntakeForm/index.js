@@ -3,11 +3,23 @@ import { TrackerForm } from "./IntakeForm.styled";
 import { SubmitButton } from "../MachineForm/MachineForm.Styled";
 import { FormInput } from "../MachineForm/MachineForm.Styled";
 
-export default function IntakeForm({ onsubmit }) {
+export default function IntakeForm({ onsubmit, pageCheck }) {
   const [carbs, setCarbs] = useState("");
   const [protein, setProtein] = useState("");
   const [fat, setFat] = useState("");
   const [kcal, setKcal] = useState("");
+  const [goalSwitch, setGoalSwitch] = useState(false);
+
+  const handleKcalChange = (event) => {
+    const value = event.target.value;
+    setKcal(value);
+    const calculatedCarbs = value / 2 / 4;
+    const calculatedProtein = value / 4 / 4;
+    const calculatedFat = value / 4 / 9;
+    setCarbs(calculatedCarbs);
+    setProtein(calculatedProtein);
+    setFat(calculatedFat);
+  };
 
   const handleCarbsChange = (event) => {
     const value = event.target.value;
@@ -30,43 +42,111 @@ export default function IntakeForm({ onsubmit }) {
     const calculatedKcal = carbs * 4 + protein * 4 + fat * 9;
     setKcal(calculatedKcal);
   };
-
+  console.log(pageCheck);
   return (
-    <TrackerForm onSubmit={onsubmit}>
-      <h2>My Intake</h2>
-      <label htmlFor="kcal">Kcal: </label>
-      <FormInput type="number" name="kcal" id="kcal" value={kcal} readOnly />
-      <label htmlFor="carbs">Carbs: </label>
-      <FormInput
-        type="number"
-        name="carbs"
-        id="carbs"
-        value={carbs}
-        onChange={handleCarbsChange}
-        placeholder="in grams"
-        required
-      />
-      <label htmlFor="protein">Protein: </label>
-      <FormInput
-        type="number"
-        name="protein"
-        id="protein"
-        value={protein}
-        onChange={handleProteinChange}
-        placeholder="in grams"
-        required
-      />
-      <label htmlFor="fat">Fat: </label>
-      <FormInput
-        type="number"
-        name="fat"
-        id="fat"
-        value={fat}
-        onChange={handleFatChange}
-        placeholder="in grams"
-        required
-      />
-      <SubmitButton type="submit">Submit</SubmitButton>
-    </TrackerForm>
+    <>
+      {pageCheck === "/tracker/goal" && (
+        <>
+          <input
+            type="checkbox"
+            id="goalSwitchBox"
+            onClick={() => {
+              setGoalSwitch(!goalSwitch);
+              setKcal("");
+              setCarbs("");
+              setProtein("");
+              setFat("");
+            }}
+          />
+          <label htmlFor="goalSwitchBox">own or predefined distribution</label>
+        </>
+      )}
+      <TrackerForm onSubmit={onsubmit}>
+        <h2>My Intake</h2>
+        <label htmlFor="kcal">Kcal</label>
+        {goalSwitch === false ? (
+          <FormInput
+            type="number"
+            name="kcal"
+            id="kcal"
+            value={kcal}
+            readOnly
+          />
+        ) : (
+          <FormInput
+            type="number"
+            name="kcal"
+            id="kcal"
+            value={kcal}
+            onChange={handleKcalChange}
+            required
+          />
+        )}
+        <label htmlFor="carbs">Carbs</label>
+        {goalSwitch === false ? (
+          <FormInput
+            type="number"
+            name="carbs"
+            id="carbs"
+            value={carbs}
+            onChange={handleCarbsChange}
+            placeholder="in grams"
+            required
+          />
+        ) : (
+          <FormInput
+            type="number"
+            name="carbs"
+            id="carbs"
+            value={Math.round(carbs)}
+            readOnly
+            placeholder="in grams"
+          />
+        )}
+        <label htmlFor="protein">Protein</label>
+        {goalSwitch === false ? (
+          <FormInput
+            type="number"
+            name="protein"
+            id="protein"
+            value={protein}
+            onChange={handleProteinChange}
+            placeholder="in grams"
+            required
+          />
+        ) : (
+          <FormInput
+            type="number"
+            name="protein"
+            id="protein"
+            value={Math.round(protein)}
+            placeholder="in grams"
+            readOnly
+          />
+        )}
+        <label htmlFor="fat">Fat</label>
+        {goalSwitch === false ? (
+          <FormInput
+            type="number"
+            name="fat"
+            id="fat"
+            value={fat}
+            onChange={handleFatChange}
+            placeholder="in grams"
+            required
+          />
+        ) : (
+          <FormInput
+            type="number"
+            name="fat"
+            id="fat"
+            value={Math.round(fat)}
+            placeholder="in grams"
+            readOnly
+          />
+        )}
+        <SubmitButton type="submit">Submit</SubmitButton>
+      </TrackerForm>
+    </>
   );
 }

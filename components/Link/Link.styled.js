@@ -70,6 +70,26 @@ export const NavLinkMachines = styled(Link)`
     color: var(--color-button-text);
   }
 `;
+// for "Goals" 'button'
+export const NavLinkSetGoals = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: var(--color-LinkThree-list);
+  border-radius: 1rem;
+  font-size: 2rem;
+  grid-area: 5/ 2 / 6 / 3;
+
+  box-shadow: var(--shadow-elevation-medium);
+  color: var(--color-link-text);
+
+  &:hover {
+    background-color: var(--color-button-bg);
+    color: var(--color-button-text);
+  }
+`;
 
 // for "Tracker" 'button'
 export const NavLinkTracker = styled(Link)`

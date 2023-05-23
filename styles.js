@@ -10,6 +10,7 @@ export default createGlobalStyle`
     --color-link-list: #809A6F;
     --color-linkOne-list: #FEE8B0;
     --color-linkTwo-list: #F97B22;
+    --color-LinkThree-list: #C0DBEA;
     --color-DelMeal-button:hsla(200, 10%, 15%,1 );
     --color-DelMeal-button-text: silver;
     --color-tracker-bg: #F3DEBA;
