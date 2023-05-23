@@ -1,5 +1,4 @@
-import { StyledLink } from "@/components/Link/Link.styled";
-import { IateButton } from "@/components/Link/Link.styled";
+import { StyledLink, IateButton } from "@/components/Link/Link.styled";
 import { DeleteLastMealButton } from "@/components/Button/Button.styled";
 import styled from "styled-components";
 import { StyledTrackerContainer } from "@/components/TrackerContainer/TrackerContainer.styled";
