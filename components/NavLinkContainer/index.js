@@ -1,11 +1,12 @@
-import { NavLink } from "../Link/Link.styled";
+import { NavLinkMachines, NavLinkTracker } from "../Link/Link.styled";
 import { StyledLinkContainer } from "./NavLinkContainer.styled";
 
 export default function NavLinkContainer() {
   return (
     <div>
       <StyledLinkContainer>
-        <NavLink href={"/list"}>Machines</NavLink>
+        <NavLinkMachines href={"/list"}>Machines</NavLinkMachines>
+        <NavLinkTracker href={"/tracker"}>Tracker</NavLinkTracker>
       </StyledLinkContainer>
     </div>
   );

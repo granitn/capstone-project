@@ -36,7 +36,7 @@ export default function FormPage() {
     //hands data to sendRequest function
     await trigger(machineAddData);
 
-    router.push("/");
+    router.push("/list");
     event.target.reset();
   }
 
