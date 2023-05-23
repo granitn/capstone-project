@@ -9,9 +9,9 @@ const initialIntakes = [
     id: 1,
     kcal: 0,
     carbs: 0,
-    protein: 0,
+    protein: 5,
     fat: 0,
-    date: new Date(),
+    date: new Date().toDateString(),
   },
 ];
 
@@ -34,6 +34,9 @@ export default function App({ Component, pageProps }) {
   const todaysIntakes = intakes.filter((intake) => {
     return new Date(intake.date).toDateString() === new Date().toDateString();
   });
+
+  console.log(todaysIntakes);
+  console.log(new Date().toDateString());
 
   return (
     <>

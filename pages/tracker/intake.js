@@ -11,7 +11,7 @@ export default function Intake({ intakes, setIntakes }) {
     const intakeData = Object.fromEntries(formData);
 
     const id = uuidv4();
-    const date = new Date();
+    const date = new Date().toDateString();
     const newIntake = { id, ...intakeData, date };
     console.log(intakeData);
     console.log(newIntake);
