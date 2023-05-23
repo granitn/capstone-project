@@ -35,9 +35,6 @@ export default function App({ Component, pageProps }) {
     return new Date(intake.date).toDateString() === new Date().toDateString();
   });
 
-  console.log(todaysIntakes);
-  console.log(new Date().toDateString());
-
   return (
     <>
       <GlobalStyle />

@@ -13,8 +13,7 @@ export default function Intake({ intakes, setIntakes }) {
     const id = uuidv4();
     const date = new Date().toDateString();
     const newIntake = { id, ...intakeData, date };
-    console.log(intakeData);
-    console.log(newIntake);
+
     setIntakes([...intakes, newIntake]);
     event.target.reset();
     router.push("/tracker");
