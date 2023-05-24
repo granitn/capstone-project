@@ -2,6 +2,7 @@ import { StyledLink, IateButton } from "@/components/Link/Link.styled";
 import { DeleteLastMealButton } from "@/components/Button/Button.styled";
 import styled from "styled-components";
 import { StyledTrackerContainer } from "@/components/TrackerContainer/TrackerContainer.styled";
+import ProgressBars from "@/components/ProgressBars";
 
 const StyledKcal = styled.p`
   grid-area: 1/1/2/3;
@@ -80,7 +81,14 @@ export default function Tracker({ todaysIntakes, goal, intakes, setIntakes }) {
 
   return (
     <StyledTrackerContainer>
-      <StyledPlaceholder>Tracker</StyledPlaceholder>
+      <ProgressBars
+        todaysKcal={todaysKcal}
+        todaysCarbs={todaysCarbs}
+        todaysProtein={todaysProtein}
+        todaysFat={todaysFat}
+        goal={goal}
+      />
+      {/* <StyledPlaceholder>Tracker</StyledPlaceholder> */}
       <GridWrapper>
         <StyledKcal>
           kcal: {todaysKcal}/{goal.kcal}

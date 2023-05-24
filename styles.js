@@ -2,18 +2,27 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
 :root {
+  // mostly machine Cards/List
     --color-card-bg: hsla(200, 10%, 75%,0.7 );
     --color-button-bg: hsla(200, 10%, 15%,1 );
     --color-button-text: hsla(200, 10%, 95%,0.9 );
     --color-button-text-shadow: hsla(200, 80%, 10%,1);
     --color-button-disabled: hsla(200, 10%, 95%,0.5 );
+    //index.js
     --color-link-list: #809A6F;
     --color-linkOne-list: #FEE8B0;
     --color-linkTwo-list: #F97B22;
     --color-LinkThree-list: #C0DBEA;
+    //tracker
     --color-DelMeal-button:hsla(200, 10%, 15%,1 );
     --color-DelMeal-button-text: silver;
     --color-tracker-bg: #F3DEBA;
+    //progressbars
+    --color-bg-progressars:
+    --color-fg-kcal:
+    --color-fg-carbs:
+    --color-fg-protein:
+    --color-fg-fat:
 
     
     --shadow-color: 204deg 10% 25%;
