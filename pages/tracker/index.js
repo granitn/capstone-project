@@ -10,13 +10,13 @@ const StyledKcal = styled.p`
   font-weight: bold;
   font-size: 1.2rem;
   margin: 0.6rem 0;
-  color: #ffae6d;
+  color: var(--color-fg-kcal);
 `;
 
 const StyledProtein = styled.p`
   grid-area: 2/2/3/3;
   justify-self: end;
-  color: #a05f96;
+  color: var(--color-fg-protein);
   font-size: 1.2rem;
   font-weight: bold;
   margin: 0.6rem 0 0.6rem 0;
@@ -24,7 +24,7 @@ const StyledProtein = styled.p`
 
 const StyledCarbs = styled.p`
   grid-area: 2/1/3/2;
-  color: #7c0a02;
+  color: var(--color-fg-carbs);
   font-weight: bold;
   font-size: 1.2rem;
   margin: 0.6rem 0.6rem 0.6rem 0;
@@ -35,7 +35,7 @@ const StyledFat = styled.p`
   justify-self: center;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #205375;
+  color: var(--color-fg-fat);
 `;
 
 const StyledPlaceholder = styled.h1`

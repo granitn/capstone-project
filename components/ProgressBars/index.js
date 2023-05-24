@@ -23,17 +23,17 @@ export default function ProgressBars({
         styles={{
           root: {},
           path: {
-            stroke: "#fff",
+            stroke: "var(--color-fg-kcal)",
 
-            strokeLinecap: "butt",
+            strokeLinecap: "round",
             transition: "stroke-dashoffset 1s ease 0.3s",
             transform: "rotate(-0.25turn)",
             transformOrigin: "center center",
           },
           trail: {
-            stroke: "#111",
+            stroke: "var(--color-bg-progressbars)",
 
-            strokeLinecap: "butt",
+            strokeLinecap: "round",
             transform: "rotate(-0.25turn)",
             transformOrigin: "center center",
           },
@@ -48,17 +48,17 @@ export default function ProgressBars({
             styles={{
               root: {},
               path: {
-                stroke: "#fff",
+                stroke: "var(--color-fg-carbs)",
 
-                strokeLinecap: "butt",
+                strokeLinecap: "round",
                 transition: "stroke-dashoffset 1s ease 0.3s",
                 transform: "rotate(-0.25turn)",
                 transformOrigin: "center center",
               },
               trail: {
-                stroke: "#111",
+                stroke: "var(--color-bg-progressbars)",
 
-                strokeLinecap: "butt",
+                strokeLinecap: "round",
                 transform: "rotate(-0.25turn)",
                 transformOrigin: "center center",
               },
@@ -73,17 +73,17 @@ export default function ProgressBars({
                 styles={{
                   root: {},
                   path: {
-                    stroke: "#fff",
+                    stroke: "var(--color-fg-protein)",
 
-                    strokeLinecap: "butt",
+                    strokeLinecap: "round",
                     transition: "stroke-dashoffset 1s ease 0.3s",
                     transform: "rotate(-0.25turn)",
                     transformOrigin: "center center",
                   },
                   trail: {
-                    stroke: "#111",
+                    stroke: "var(--color-bg-progressbars)",
 
-                    strokeLinecap: "butt",
+                    strokeLinecap: "round",
                     transform: "rotate(-0.25turn)",
                     transformOrigin: "center center",
                   },
@@ -98,17 +98,17 @@ export default function ProgressBars({
                     styles={{
                       root: {},
                       path: {
-                        stroke: "#fff",
+                        stroke: "var(--color-fg-fat)",
 
-                        strokeLinecap: "butt",
-                        transition: "stroke-dashoffset 1s ease 0.3s",
+                        strokeLinecap: "round",
+                        transition: "stroke-dashoffset 1s ease 1s",
                         transform: "rotate(-0.25turn)",
                         transformOrigin: "center center",
                       },
                       trail: {
-                        stroke: "#111",
-
-                        strokeLinecap: "butt",
+                        stroke: "var(--color-bg-progressbars)",
+                        transition: "stroke-dashoffset 1s ease 1s",
+                        strokeLinecap: "round",
                         transform: "rotate(-0.25turn)",
                         transformOrigin: "center center",
                       },
