@@ -46,7 +46,7 @@ const StyledPlaceholder = styled.h1`
 `;
 
 const GridWrapper = styled.div`
-  grid-area: 3 / 2/ 5 / 4;
+  grid-area: 4 / 2/ 6 / 4;
   display: grid;
 
   grid-template-columns: auto auto;

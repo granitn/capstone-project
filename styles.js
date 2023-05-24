@@ -18,7 +18,7 @@ export default createGlobalStyle`
     --color-DelMeal-button-text: silver;
     --color-tracker-bg: #F3DEBA;
     //progressbars
-    --color-bg-progressbars:hsla(200, 10%, 75%,0.7 );
+    --color-bg-progressbars:hsla(200, 10%, 70%,0.5 );
     --color-fg-kcal: #7c0a02;
     --color-fg-carbs: #679457;
     --color-fg-protein: #976ca6;

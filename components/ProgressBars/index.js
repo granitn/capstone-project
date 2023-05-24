@@ -42,6 +42,7 @@ export default function ProgressBars({
             transform: "rotate(-0.25turn)",
             transformOrigin: "center center",
           },
+
           trail: {
             stroke: "var(--color-bg-progressbars)",
 
@@ -123,7 +124,6 @@ export default function ProgressBars({
                         strokeLinecap: "round",
                         transform: "rotate(-0.25turn)",
                         transformOrigin: "center center",
-                        shadow: "0 0 0 2px var(--color-bg-progressbars)",
                       },
                     }}
                   ></CircularProgressbar>
