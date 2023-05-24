@@ -4,8 +4,8 @@ import {
   buildStyles,
 } from "react-circular-progressbar";
 import { ProgressbarContainer } from "./ProgressBar.styled";
+import { useState, useEffect } from "react";
 
-const percentage = 100;
 export default function ProgressBars({
   todaysKcal,
   todaysCarbs,
@@ -13,10 +13,22 @@ export default function ProgressBars({
   todaysFat,
   goal,
 }) {
+  const [kcalProgress, setKcalProgress] = useState(todaysKcal);
+  const [carbsProgress, setCarbsProgress] = useState(todaysCarbs);
+  const [proteinProgress, setProteinProgress] = useState(todaysProtein);
+  const [fatProgress, setFatProgress] = useState(todaysFat);
+
+  useEffect(() => {
+    setKcalProgress(todaysKcal);
+    setCarbsProgress(todaysCarbs);
+    setProteinProgress(todaysProtein);
+    setFatProgress(todaysFat);
+  }, [todaysKcal, todaysCarbs, todaysProtein, todaysFat]);
+
   return (
     <ProgressbarContainer>
       <CircularProgressbarWithChildren
-        value={todaysKcal}
+        value={kcalProgress}
         maxValue={goal.kcal}
         circleRatio={0.5}
         strokeWidth={10}
@@ -41,7 +53,7 @@ export default function ProgressBars({
       >
         <div style={{ width: "74%", height: "77%" }}>
           <CircularProgressbarWithChildren
-            value={todaysCarbs}
+            value={carbsProgress}
             maxValue={goal.carbs}
             circleRatio={0.5}
             strokeWidth={12}
@@ -66,7 +78,7 @@ export default function ProgressBars({
           >
             <div style={{ width: "68%", height: "72%" }}>
               <CircularProgressbarWithChildren
-                value={todaysProtein}
+                value={proteinProgress}
                 maxValue={goal.protein}
                 circleRatio={0.5}
                 strokeWidth={16}
@@ -91,7 +103,7 @@ export default function ProgressBars({
               >
                 <div style={{ width: "57%", height: "63%" }}>
                   <CircularProgressbar
-                    value={todaysFat}
+                    value={fatProgress}
                     maxValue={goal.fat}
                     circleRatio={0.5}
                     strokeWidth={26}
@@ -101,16 +113,17 @@ export default function ProgressBars({
                         stroke: "var(--color-fg-fat)",
 
                         strokeLinecap: "round",
-                        transition: "stroke-dashoffset 1s ease 1s",
+                        transition: "stroke-dashoffset 1s ease 0.3s",
                         transform: "rotate(-0.25turn)",
                         transformOrigin: "center center",
                       },
                       trail: {
                         stroke: "var(--color-bg-progressbars)",
-                        transition: "stroke-dashoffset 1s ease 1s",
+                        transition: "stroke-dashoffset 1s ease 0.3s",
                         strokeLinecap: "round",
                         transform: "rotate(-0.25turn)",
                         transformOrigin: "center center",
+                        shadow: "0 0 0 2px var(--color-bg-progressbars)",
                       },
                     }}
                   ></CircularProgressbar>

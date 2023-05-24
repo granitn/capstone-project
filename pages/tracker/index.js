@@ -3,6 +3,7 @@ import { DeleteLastMealButton } from "@/components/Button/Button.styled";
 import styled from "styled-components";
 import { StyledTrackerContainer } from "@/components/TrackerContainer/TrackerContainer.styled";
 import ProgressBars from "@/components/ProgressBars";
+import { useState, useEffect } from "react";
 
 const StyledKcal = styled.p`
   grid-area: 1/1/2/3;
@@ -53,25 +54,34 @@ const GridWrapper = styled.div`
 `;
 
 export default function Tracker({ todaysIntakes, goal, intakes, setIntakes }) {
-  const todaysCarbs = todaysIntakes.reduce(
-    (sum, intake) => sum + parseInt(intake.carbs),
-    0
-  );
+  const [todaysKcal, setTodaysKcal] = useState(0);
+  const [todaysCarbs, setTodaysCarbs] = useState(0);
+  const [todaysProtein, setTodaysProtein] = useState(0);
+  const [todaysFat, setTodaysFat] = useState(0);
 
-  const todaysKcal = todaysIntakes.reduce(
-    (sum, intake) => sum + parseInt(intake.kcal),
-    0
-  );
+  useEffect(() => {
+    const kcal = todaysIntakes.reduce(
+      (sum, intake) => sum + parseInt(intake.kcal),
+      0
+    );
+    const carbs = todaysIntakes.reduce(
+      (sum, intake) => sum + parseInt(intake.carbs),
+      0
+    );
+    const protein = todaysIntakes.reduce(
+      (sum, intake) => sum + parseInt(intake.protein),
+      0
+    );
+    const fat = todaysIntakes.reduce(
+      (sum, intake) => sum + parseInt(intake.fat),
+      0
+    );
 
-  const todaysProtein = todaysIntakes.reduce(
-    (sum, intake) => sum + parseInt(intake.protein),
-    0
-  );
-
-  const todaysFat = todaysIntakes.reduce(
-    (sum, intake) => sum + parseInt(intake.fat),
-    0
-  );
+    setTodaysKcal(kcal);
+    setTodaysCarbs(carbs);
+    setTodaysProtein(protein);
+    setTodaysFat(fat);
+  }, [todaysIntakes]);
 
   function handleDeleteLastMeal() {
     const updatedIntakes = [...intakes];
