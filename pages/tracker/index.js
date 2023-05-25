@@ -39,12 +39,6 @@ const StyledFat = styled.p`
   color: var(--color-fg-fat);
 `;
 
-const StyledPlaceholder = styled.h1`
-  grid-area: 1/ 2 /3 / 4;
-  align-self: center;
-  justify-self: center;
-`;
-
 const GridWrapper = styled.div`
   grid-area: 4 / 2/ 6 / 4;
   display: grid;
@@ -98,7 +92,7 @@ export default function Tracker({ todaysIntakes, goal, intakes, setIntakes }) {
         todaysFat={todaysFat}
         goal={goal}
       />
-      {/* <StyledPlaceholder>Tracker</StyledPlaceholder> */}
+
       <GridWrapper>
         <StyledKcal>
           kcal: {todaysKcal}/{goal.kcal}

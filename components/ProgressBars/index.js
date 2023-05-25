@@ -5,6 +5,13 @@ import {
 } from "react-circular-progressbar";
 import { ProgressbarContainer } from "./ProgressBar.styled";
 import { useState, useEffect } from "react";
+import { CarbWrapper, ProteinWrapper, FatWrapper } from "./ProgressBar.styled";
+import {
+  kcalStyles,
+  carbStyles,
+  proteinStyles,
+  fatStyles,
+} from "./ProgressBar.styled";
 
 export default function ProgressBars({
   todaysKcal,
@@ -32,106 +39,37 @@ export default function ProgressBars({
         maxValue={goal.kcal}
         circleRatio={0.5}
         strokeWidth={10}
-        styles={{
-          root: {},
-          path: {
-            stroke: "var(--color-fg-kcal)",
-
-            strokeLinecap: "round",
-            transition: "stroke-dashoffset 1s ease 0.3s",
-            transform: "rotate(-0.25turn)",
-            transformOrigin: "center center",
-          },
-
-          trail: {
-            stroke: "var(--color-bg-progressbars)",
-
-            strokeLinecap: "round",
-            transform: "rotate(-0.25turn)",
-            transformOrigin: "center center",
-          },
-        }}
+        styles={buildStyles(kcalStyles)}
       >
-        <div style={{ width: "74%", height: "77%" }}>
+        <CarbWrapper>
           <CircularProgressbarWithChildren
             value={carbsProgress}
             maxValue={goal.carbs}
             circleRatio={0.5}
             strokeWidth={12}
-            styles={{
-              root: {},
-              path: {
-                stroke: "var(--color-fg-carbs)",
-
-                strokeLinecap: "round",
-                transition: "stroke-dashoffset 1s ease 0.3s",
-                transform: "rotate(-0.25turn)",
-                transformOrigin: "center center",
-              },
-              trail: {
-                stroke: "var(--color-bg-progressbars)",
-
-                strokeLinecap: "round",
-                transform: "rotate(-0.25turn)",
-                transformOrigin: "center center",
-              },
-            }}
+            styles={buildStyles(carbStyles)}
           >
-            <div style={{ width: "68%", height: "72%" }}>
+            <ProteinWrapper>
               <CircularProgressbarWithChildren
                 value={proteinProgress}
                 maxValue={goal.protein}
                 circleRatio={0.5}
                 strokeWidth={16}
-                styles={{
-                  root: {},
-                  path: {
-                    stroke: "var(--color-fg-protein)",
-
-                    strokeLinecap: "round",
-                    transition: "stroke-dashoffset 1s ease 0.3s",
-                    transform: "rotate(-0.25turn)",
-                    transformOrigin: "center center",
-                  },
-                  trail: {
-                    stroke: "var(--color-bg-progressbars)",
-
-                    strokeLinecap: "round",
-                    transform: "rotate(-0.25turn)",
-                    transformOrigin: "center center",
-                  },
-                }}
+                styles={buildStyles(proteinStyles)}
               >
-                <div style={{ width: "57%", height: "63%" }}>
+                <FatWrapper>
                   <CircularProgressbar
                     value={fatProgress}
                     maxValue={goal.fat}
                     circleRatio={0.5}
                     strokeWidth={26}
-                    styles={{
-                      root: {},
-                      path: {
-                        stroke: "var(--color-fg-fat)",
-
-                        strokeLinecap: "round",
-                        transition: "stroke-dashoffset 1s ease 0.3s",
-                        transform: "rotate(-0.25turn)",
-                        transformOrigin: "center center",
-                      },
-                      trail: {
-                        stroke: "var(--color-bg-progressbars)",
-                        transition: "stroke-dashoffset 1s ease 0.3s",
-                        strokeLinecap: "round",
-                        transform: "rotate(-0.25turn)",
-                        transformOrigin: "center center",
-                      },
-                    }}
+                    styles={buildStyles(fatStyles)}
                   ></CircularProgressbar>
-                </div>
+                </FatWrapper>
               </CircularProgressbarWithChildren>
-            </div>
+            </ProteinWrapper>
           </CircularProgressbarWithChildren>
-        </div>
+        </CarbWrapper>
       </CircularProgressbarWithChildren>
     </ProgressbarContainer>
   );
