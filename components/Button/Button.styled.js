@@ -37,6 +37,9 @@ export const DeleteLastMealButton = styled.button`
   background-color: var(--color-DelMeal-button);
   color: var(--color-DelMeal-button-text);
   grid-area: 6/3/7/4;
+  @media screen and (min-width: 768px) {
+    grid-area: 7/3/8/4;
+  }
   box-shadow: var(--shadow-elevation-medium);
 
   &:hover {

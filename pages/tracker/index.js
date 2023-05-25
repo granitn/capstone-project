@@ -2,6 +2,8 @@ import { StyledLink, IateButton } from "@/components/Link/Link.styled";
 import { DeleteLastMealButton } from "@/components/Button/Button.styled";
 import styled from "styled-components";
 import { StyledTrackerContainer } from "@/components/TrackerContainer/TrackerContainer.styled";
+import ProgressBars from "@/components/ProgressBars";
+import { useState, useEffect } from "react";
 
 const StyledKcal = styled.p`
   grid-area: 1/1/2/3;
@@ -9,13 +11,13 @@ const StyledKcal = styled.p`
   font-weight: bold;
   font-size: 1.2rem;
   margin: 0.6rem 0;
-  color: #ffae6d;
+  color: var(--color-fg-kcal);
 `;
 
 const StyledProtein = styled.p`
   grid-area: 2/2/3/3;
   justify-self: end;
-  color: #a05f96;
+  color: var(--color-fg-protein);
   font-size: 1.2rem;
   font-weight: bold;
   margin: 0.6rem 0 0.6rem 0;
@@ -23,7 +25,7 @@ const StyledProtein = styled.p`
 
 const StyledCarbs = styled.p`
   grid-area: 2/1/3/2;
-  color: #7c0a02;
+  color: var(--color-fg-carbs);
   font-weight: bold;
   font-size: 1.2rem;
   margin: 0.6rem 0.6rem 0.6rem 0;
@@ -34,17 +36,11 @@ const StyledFat = styled.p`
   justify-self: center;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #205375;
-`;
-
-const StyledPlaceholder = styled.h1`
-  grid-area: 1/ 2 /3 / 4;
-  align-self: center;
-  justify-self: center;
+  color: var(--color-fg-fat);
 `;
 
 const GridWrapper = styled.div`
-  grid-area: 3 / 2/ 5 / 4;
+  grid-area: 4 / 2/ 6 / 4;
   display: grid;
 
   grid-template-columns: auto auto;
@@ -52,25 +48,34 @@ const GridWrapper = styled.div`
 `;
 
 export default function Tracker({ todaysIntakes, goal, intakes, setIntakes }) {
-  const todaysCarbs = todaysIntakes.reduce(
-    (sum, intake) => sum + parseInt(intake.carbs),
-    0
-  );
+  const [todaysKcal, setTodaysKcal] = useState(0);
+  const [todaysCarbs, setTodaysCarbs] = useState(0);
+  const [todaysProtein, setTodaysProtein] = useState(0);
+  const [todaysFat, setTodaysFat] = useState(0);
 
-  const todaysKcal = todaysIntakes.reduce(
-    (sum, intake) => sum + parseInt(intake.kcal),
-    0
-  );
+  useEffect(() => {
+    const kcal = todaysIntakes.reduce(
+      (sum, intake) => sum + parseInt(intake.kcal),
+      0
+    );
+    const carbs = todaysIntakes.reduce(
+      (sum, intake) => sum + parseInt(intake.carbs),
+      0
+    );
+    const protein = todaysIntakes.reduce(
+      (sum, intake) => sum + parseInt(intake.protein),
+      0
+    );
+    const fat = todaysIntakes.reduce(
+      (sum, intake) => sum + parseInt(intake.fat),
+      0
+    );
 
-  const todaysProtein = todaysIntakes.reduce(
-    (sum, intake) => sum + parseInt(intake.protein),
-    0
-  );
-
-  const todaysFat = todaysIntakes.reduce(
-    (sum, intake) => sum + parseInt(intake.fat),
-    0
-  );
+    setTodaysKcal(kcal);
+    setTodaysCarbs(carbs);
+    setTodaysProtein(protein);
+    setTodaysFat(fat);
+  }, [todaysIntakes]);
 
   function handleDeleteLastMeal() {
     const updatedIntakes = [...intakes];
@@ -80,7 +85,14 @@ export default function Tracker({ todaysIntakes, goal, intakes, setIntakes }) {
 
   return (
     <StyledTrackerContainer>
-      <StyledPlaceholder>Tracker</StyledPlaceholder>
+      <ProgressBars
+        todaysKcal={todaysKcal}
+        todaysCarbs={todaysCarbs}
+        todaysProtein={todaysProtein}
+        todaysFat={todaysFat}
+        goal={goal}
+      />
+
       <GridWrapper>
         <StyledKcal>
           kcal: {todaysKcal}/{goal.kcal}

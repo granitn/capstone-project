@@ -123,6 +123,9 @@ export const IateButton = styled(Link)`
   border-radius: 1rem;
   font-size: 2rem;
   grid-area: 6/ 2 / 7 / 3;
+  @media screen and (min-width: 768px) {
+    grid-area: 7/ 2 / 8 / 3;
+  }
 
   box-shadow: var(--shadow-elevation-medium);
   color: var(--color-link-text);
