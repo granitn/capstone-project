@@ -1,12 +1,11 @@
 import styled, { createGlobalStyle } from "styled-components";
 
-import { MachineEntry } from "./MachineCard.styled";
+import { MachineEntry, MotionEntry } from "./MachineCard.styled";
 import { DeleteButton } from "../Button/Button.styled";
 import { EditButton } from "../Link/Link.styled";
 import useSWR from "swr";
 import { BsFillGearFill } from "react-icons/bs";
 import { StyledImage } from "./MachineCard.styled";
-import { MotionEntry } from "./MachineCard.styled";
 
 //styled components only used in card
 const StyledTextareaP = styled.p`

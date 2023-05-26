@@ -15,8 +15,8 @@ export const MachineEntry = styled.article`
   margin: auto;
 `;
 
-export const MotionEntry = styled(motion.article)`
-  background-color: var(--color-card-bg);
+export const MotionEntry = styled(motion(MachineEntry))`
+  /* background-color: var(--color-card-bg);
   display: flex;
   position: relative;
   flex-direction: column;
@@ -25,7 +25,8 @@ export const MotionEntry = styled(motion.article)`
   padding-top: 1rem;
   width: 20rem;
   box-shadow: var(--shadow-elevation-medium);
-  margin: auto;
+  margin: auto; */
+  transition: transform 0.2s;
 `;
 
 export const StyledImage = styled(Image)`
