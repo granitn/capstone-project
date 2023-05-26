@@ -15,4 +15,5 @@ export const StyledTrackerContainer = styled.div`
     padding-top: 5%;
   }
   background-color: var(--color-tracker-bg);
+  position: relative;
 `;

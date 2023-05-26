@@ -1,11 +1,12 @@
 import styled, { createGlobalStyle } from "styled-components";
-import Image from "next/image";
+
 import { MachineEntry } from "./MachineCard.styled";
 import { DeleteButton } from "../Button/Button.styled";
 import { EditButton } from "../Link/Link.styled";
 import useSWR from "swr";
 import { BsFillGearFill } from "react-icons/bs";
 import { StyledImage } from "./MachineCard.styled";
+import { MotionEntry } from "./MachineCard.styled";
 
 //styled components only used in card
 const StyledTextareaP = styled.p`
@@ -37,7 +38,7 @@ export default function MachineCard({ machine }) {
   }
 
   return (
-    <MachineEntry>
+    <MotionEntry whileHover={{ scale: 1.1 }}>
       <DeleteButton aria-label="Delete" onClick={handleDelete}>
         -
       </DeleteButton>
@@ -59,6 +60,6 @@ export default function MachineCard({ machine }) {
       )}
       <StyledName>{machine.machineName}</StyledName>
       <StyledTextareaP>{machine.settings}</StyledTextareaP>
-    </MachineEntry>
+    </MotionEntry>
   );
 }

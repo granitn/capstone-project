@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { StyledTrackerContainer } from "@/components/TrackerContainer/TrackerContainer.styled";
 import ProgressBars from "@/components/ProgressBars";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import SingleComplete from "@/components/SingleComplete";
 
 const StyledKcal = styled.p`
   grid-area: 1/1/2/3;
@@ -85,6 +87,13 @@ export default function Tracker({ todaysIntakes, goal, intakes, setIntakes }) {
 
   return (
     <StyledTrackerContainer>
+      <SingleComplete
+        kcalFull={todaysKcal >= goal.kcal}
+        carbsFull={todaysCarbs >= goal.carbs}
+        proteinFull={todaysProtein >= goal.protein}
+        fatFull={todaysFat >= goal.fat}
+      />
+
       <ProgressBars
         todaysKcal={todaysKcal}
         todaysCarbs={todaysCarbs}
