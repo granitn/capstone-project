@@ -7,7 +7,7 @@ import {
 export default function GoalSwitchSlider({ className, checked, ...props }) {
   return (
     <Switch className={className}>
-      <HiddenCheckbox type="checkbox" checked={checked} {...props} />
+      <HiddenCheckbox type="checkbox" {...props} />
       <Slider className="slider" checked={checked} />
     </Switch>
   );
