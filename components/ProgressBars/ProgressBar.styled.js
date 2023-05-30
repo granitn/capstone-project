@@ -10,7 +10,6 @@ export const ProgressbarContainer = styled.div`
   @media screen and (min-width: 768px) {
     height: 400px;
     width: 400px;
-    /* padding-top: 10%; */
   }
 `;
 

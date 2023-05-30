@@ -48,7 +48,7 @@ export default function IntakeForm({ onsubmit, pageCheck }) {
   return (
     <>
       <TrackerForm onSubmit={onsubmit}>
-        <h2>{pageCheck ? "What are your goals?" : "Intake"}</h2>
+        <h2>{pageCheck ? "Nutrition Goals" : "Intake"}</h2>
         <label htmlFor="kcal">Kcal</label>
         {goalSwitch === false ? (
           <FormInput

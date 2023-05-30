@@ -7,8 +7,7 @@ export const TrackerFormBackground = styled.div`
   justify-content: start;
   gap: 1rem;
   padding-top: 1rem;
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
   background-color: var(--color-tracker-form-bg);
 `;
 
