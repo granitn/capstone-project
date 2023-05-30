@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+//by @Voxybuns on uiverse, changed into styled-components
+
 export const Switch = styled.label`
   /* Variables */
   --switch_width: 2em;
