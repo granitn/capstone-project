@@ -7,9 +7,13 @@ export const TrackerForm = styled.form`
 
   gap: 1rem;
   width: 320px;
-  height: 70vh;
+  min-height: 60vh;
   box-shadow: var(--shadow-elevation-medium);
   border-radius: 2rem;
   background-color: var(--color-tracker-bg);
   margin: 0;
+`;
+
+export const SwitchLabel = styled.label`
+  color: var(--color-button-text);
 `;

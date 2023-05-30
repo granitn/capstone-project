@@ -2,6 +2,8 @@ import { useState } from "react";
 import { TrackerForm } from "./IntakeForm.styled";
 import { SubmitButton } from "../MachineForm/MachineForm.Styled";
 import { FormInput } from "../MachineForm/MachineForm.Styled";
+import GoalSwitchSlider from "../GoalSwitchSlider";
+import { SwitchLabel } from "./IntakeForm.styled";
 
 export default function IntakeForm({ onsubmit, pageCheck }) {
   const [carbs, setCarbs] = useState("");
@@ -42,27 +44,11 @@ export default function IntakeForm({ onsubmit, pageCheck }) {
     const calculatedKcal = carbs * 4 + protein * 4 + fat * 9;
     setKcal(calculatedKcal);
   };
-  console.log(pageCheck);
+
   return (
     <>
-      {pageCheck && (
-        <>
-          <input
-            type="checkbox"
-            id="goalSwitchBox"
-            onClick={() => {
-              setGoalSwitch(!goalSwitch);
-              setKcal("");
-              setCarbs("");
-              setProtein("");
-              setFat("");
-            }}
-          />
-          <label htmlFor="goalSwitchBox">own or predefined distribution</label>
-        </>
-      )}
       <TrackerForm onSubmit={onsubmit}>
-        <h2>My Intake</h2>
+        <h2>{pageCheck ? "What are your goals?" : "Intake"}</h2>
         <label htmlFor="kcal">Kcal</label>
         {goalSwitch === false ? (
           <FormInput
@@ -147,6 +133,26 @@ export default function IntakeForm({ onsubmit, pageCheck }) {
         )}
         <SubmitButton type="submit">Submit</SubmitButton>
       </TrackerForm>
+      {pageCheck && (
+        <>
+          <GoalSwitchSlider
+            id="goalSwitchBox"
+            checked={goalSwitch}
+            onClick={() => {
+              setGoalSwitch(!goalSwitch);
+              setKcal("");
+              setCarbs("");
+              setProtein("");
+              setFat("");
+            }}
+          />
+          <SwitchLabel htmlFor="goalSwitchBox">
+            {goalSwitch
+              ? "Enter Kcal to use 50:25:25 distribution"
+              : "Use own distribution"}
+          </SwitchLabel>
+        </>
+      )}
     </>
   );
 }
