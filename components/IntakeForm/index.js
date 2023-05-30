@@ -45,7 +45,7 @@ export default function IntakeForm({ onsubmit, pageCheck }) {
   console.log(pageCheck);
   return (
     <>
-      {pageCheck === "/tracker/goal" && (
+      {pageCheck && (
         <>
           <input
             type="checkbox"

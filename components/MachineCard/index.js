@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
-
+import { useAnimation } from "framer-motion";
 import { MachineEntry, MotionEntry } from "./MachineCard.styled";
 import { DeleteButton } from "../Button/Button.styled";
 import { EditButton } from "../Link/Link.styled";
@@ -21,6 +21,16 @@ const StyledName = styled.p`
 export default function MachineCard({ machine }) {
   const { mutate } = useSWR("/api/machines");
 
+  const controls = useAnimation();
+  const wiggleAnimation = async () => {
+    // Animation sequence
+    await controls.start({ rotate: -10, transition: { duration: 0.1 } });
+    await controls.start({ rotate: 10, transition: { duration: 0.1 } });
+    await controls.start({ rotate: -4, transition: { duration: 0.1 } });
+    await controls.start({ rotate: 4, transition: { duration: 0.1 } });
+    await controls.start({ rotate: 0, transition: { duration: 0.1 } });
+  };
+
   //sends delete request
   async function handleDelete() {
     const response = await fetch(`/api/machines/${machine._id}`, {
@@ -37,7 +47,7 @@ export default function MachineCard({ machine }) {
   }
 
   return (
-    <MotionEntry whileHover={{ scale: 1.1 }}>
+    <MotionEntry animate={controls} onMouseEnter={wiggleAnimation}>
       <DeleteButton aria-label="Delete" onClick={handleDelete}>
         -
       </DeleteButton>

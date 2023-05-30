@@ -19,7 +19,17 @@ export const FormLabel = styled.label`
 `;
 
 export const FormInput = styled.input`
-  width: 60vw;
+  width: 5rem;
+  height: 2rem;
+  border: none;
+  box-shadow: var(--shadow-elevation-low);
+  border: 2px solid lightgrey;
+  opacity: ${({ readOnly }) => (readOnly ? "0.5" : "1")};
+  &:focus {
+    scale: 1.1;
+    box-shadow: var(--shadow-elevation-medium);
+    outline: none;
+  }
 `;
 
 export const FormArea = styled.textarea`
