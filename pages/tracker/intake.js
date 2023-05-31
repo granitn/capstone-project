@@ -2,6 +2,7 @@ import IntakeForm from "@/components/IntakeForm";
 import { StyledLink } from "@/components/Link/Link.styled";
 import { v4 as uuidv4 } from "uuid";
 import { useRouter } from "next/router";
+import { TrackerFormBackground } from "@/components/Backgrounds/Background.styled";
 
 export default function Intake({ intakes, setIntakes }) {
   const router = useRouter();
@@ -20,9 +21,9 @@ export default function Intake({ intakes, setIntakes }) {
   }
 
   return (
-    <div>
+    <TrackerFormBackground>
       <IntakeForm onsubmit={handleSubmit} />
       <StyledLink href={"/tracker"}>Back</StyledLink>
-    </div>
+    </TrackerFormBackground>
   );
 }

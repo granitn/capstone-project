@@ -59,7 +59,7 @@ export default function CardEditPage() {
 
     //hands data to updateMachine function
     await trigger(machineEditData);
-    router.push("/");
+    router.push("/list");
   }
 
   function handleImageUpload(url) {

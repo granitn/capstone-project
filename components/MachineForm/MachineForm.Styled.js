@@ -19,11 +19,28 @@ export const FormLabel = styled.label`
 `;
 
 export const FormInput = styled.input`
-  width: 60vw;
+  min-width: 5rem;
+  height: 2rem;
+
+  box-shadow: var(--shadow-elevation-low);
+  border: 2px solid lightgrey;
+  opacity: ${({ readOnly }) => (readOnly ? "0.5" : "1")};
+  &:focus {
+    scale: 1.1;
+    box-shadow: var(--shadow-elevation-medium);
+    outline: none;
+  }
 `;
 
 export const FormArea = styled.textarea`
+  border: 2px solid lightgrey;
+  box-shadow: var(--shadow-elevation-low);
   width: 60vw;
+  &:focus {
+    scale: 1.1;
+    box-shadow: var(--shadow-elevation-medium);
+    outline: none;
+  }
 `;
 
 export const SubmitButton = styled.button`

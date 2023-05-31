@@ -1,5 +1,4 @@
 import styled, { createGlobalStyle } from "styled-components";
-import Image from "next/image";
 import { MachineEntry } from "./MachineCard.styled";
 import { DeleteButton } from "../Button/Button.styled";
 import { EditButton } from "../Link/Link.styled";
@@ -11,6 +10,7 @@ import { StyledImage } from "./MachineCard.styled";
 const StyledTextareaP = styled.p`
   white-space: pre-line;
   margin-top: 0.5rem;
+  margin-bottom: 2rem;
 `;
 
 const StyledName = styled.p`

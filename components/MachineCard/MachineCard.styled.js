@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export const MachineEntry = styled.article`
   background-color: var(--color-card-bg);

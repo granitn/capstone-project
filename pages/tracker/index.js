@@ -4,12 +4,14 @@ import styled from "styled-components";
 import { StyledTrackerContainer } from "@/components/TrackerContainer/TrackerContainer.styled";
 import ProgressBars from "@/components/ProgressBars";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import SingleComplete from "@/components/SingleComplete";
 
 const StyledKcal = styled.p`
   grid-area: 1/1/2/3;
   justify-self: center;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin: 0.6rem 0;
   color: var(--color-fg-kcal);
 `;
@@ -18,7 +20,7 @@ const StyledProtein = styled.p`
   grid-area: 2/2/3/3;
   justify-self: end;
   color: var(--color-fg-protein);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
   margin: 0.6rem 0 0.6rem 0;
 `;
@@ -26,25 +28,25 @@ const StyledProtein = styled.p`
 const StyledCarbs = styled.p`
   grid-area: 2/1/3/2;
   color: var(--color-fg-carbs);
+  justify-self: start;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin: 0.6rem 0.6rem 0.6rem 0;
 `;
 
 const StyledFat = styled.p`
   grid-area: 3/1/4/3;
   justify-self: center;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: var(--color-fg-fat);
 `;
 
 const GridWrapper = styled.div`
-  grid-area: 4 / 2/ 6 / 4;
+  grid-area: 3 / 2/ 5 / 4;
   display: grid;
-
   grid-template-columns: auto auto;
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: repeat(3, 3rem);
 `;
 
 export default function Tracker({ todaysIntakes, goal, intakes, setIntakes }) {
@@ -85,6 +87,13 @@ export default function Tracker({ todaysIntakes, goal, intakes, setIntakes }) {
 
   return (
     <StyledTrackerContainer>
+      <SingleComplete
+        kcalFull={todaysKcal >= goal.kcal}
+        carbsFull={todaysCarbs >= goal.carbs}
+        proteinFull={todaysProtein >= goal.protein}
+        fatFull={todaysFat >= goal.fat}
+      />
+
       <ProgressBars
         todaysKcal={todaysKcal}
         todaysCarbs={todaysCarbs}
@@ -98,13 +107,13 @@ export default function Tracker({ todaysIntakes, goal, intakes, setIntakes }) {
           kcal: {todaysKcal}/{goal.kcal}
         </StyledKcal>
         <StyledCarbs>
-          carbs:{todaysCarbs}/{goal.carbs}
+          Carbs: {todaysCarbs}/{goal.carbs}
         </StyledCarbs>
         <StyledProtein>
-          protein:{todaysProtein}/{goal.protein}
+          Protein: {todaysProtein}/{goal.protein}
         </StyledProtein>
         <StyledFat>
-          fat:{todaysFat}/{goal.fat}
+          Fat: {todaysFat}/{goal.fat}
         </StyledFat>
       </GridWrapper>
       <IateButton href={"/tracker/intake"}>I ate!</IateButton>

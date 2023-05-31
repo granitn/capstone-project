@@ -9,7 +9,7 @@ const initialIntakes = [
     id: 1,
     kcal: 0,
     carbs: 0,
-    protein: 5,
+    protein: 0,
     fat: 0,
     date: new Date().toDateString(),
   },
@@ -17,9 +17,9 @@ const initialIntakes = [
 
 const initialGoal = {
   kcal: 2500,
-  carbs: 312.5,
-  protein: 156.25,
-  fat: 69.375,
+  carbs: 313,
+  protein: 156,
+  fat: 69,
 };
 
 export default function App({ Component, pageProps }) {

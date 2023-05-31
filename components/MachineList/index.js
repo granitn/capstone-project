@@ -1,7 +1,6 @@
 import useSWR from "swr";
 import MachineCard from "@/components/MachineCard";
 import { StyledList } from "./MachineList.styled";
-import { useRouter } from "next/router";
 
 export default function MachineList() {
   const { data, isLoading, error } = useSWR("/api/machines");
