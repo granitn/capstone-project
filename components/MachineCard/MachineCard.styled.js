@@ -15,10 +15,6 @@ export const MachineEntry = styled.article`
   margin: auto;
 `;
 
-export const MotionEntry = styled(MachineEntry)`
-  transition: transform 0.2s;
-`;
-
 export const StyledImage = styled(Image)`
   object-fit: cover;
   border-radius: 50%;

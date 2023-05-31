@@ -107,13 +107,13 @@ export default function Tracker({ todaysIntakes, goal, intakes, setIntakes }) {
           kcal: {todaysKcal}/{goal.kcal}
         </StyledKcal>
         <StyledCarbs>
-          carbs: {todaysCarbs}/{goal.carbs}
+          Carbs: {todaysCarbs}/{goal.carbs}
         </StyledCarbs>
         <StyledProtein>
-          protein: {todaysProtein}/{goal.protein}
+          Protein: {todaysProtein}/{goal.protein}
         </StyledProtein>
         <StyledFat>
-          fat: {todaysFat}/{goal.fat}
+          Fat: {todaysFat}/{goal.fat}
         </StyledFat>
       </GridWrapper>
       <IateButton href={"/tracker/intake"}>I ate!</IateButton>

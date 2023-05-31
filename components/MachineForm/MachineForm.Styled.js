@@ -21,7 +21,7 @@ export const FormLabel = styled.label`
 export const FormInput = styled.input`
   min-width: 5rem;
   height: 2rem;
-  border: none;
+
   box-shadow: var(--shadow-elevation-low);
   border: 2px solid lightgrey;
   opacity: ${({ readOnly }) => (readOnly ? "0.5" : "1")};
@@ -33,7 +33,14 @@ export const FormInput = styled.input`
 `;
 
 export const FormArea = styled.textarea`
+  border: 2px solid lightgrey;
+  box-shadow: var(--shadow-elevation-low);
   width: 60vw;
+  &:focus {
+    scale: 1.1;
+    box-shadow: var(--shadow-elevation-medium);
+    outline: none;
+  }
 `;
 
 export const SubmitButton = styled.button`

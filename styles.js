@@ -23,8 +23,8 @@ export default createGlobalStyle`
     --color-fg-kcal: #7c0a02;
     --color-fg-carbs: #679457;
     --color-fg-protein: #976ca6;
-    --color-fg-fat: #a7b7db;
-
+    --color-fg-fat: #4A58B5;
+/* #a7b7db */
     
     --shadow-color: 204deg 10% 25%;
     --shadow-elevation-low:

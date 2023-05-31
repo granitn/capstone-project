@@ -16,10 +16,10 @@ const initialIntakes = [
 ];
 
 const initialGoal = {
-  kcal: 0,
-  carbs: 0,
-  protein: 0,
-  fat: 0,
+  kcal: 2500,
+  carbs: 313,
+  protein: 156,
+  fat: 69,
 };
 
 export default function App({ Component, pageProps }) {
