@@ -45,9 +45,7 @@ const StyledFat = styled.p`
 const GridWrapper = styled.div`
   grid-area: 3 / 2/ 5 / 4;
   display: grid;
-
   grid-template-columns: auto auto;
-  /* grid-template-rows: repeat(3, auto); */
   grid-template-rows: repeat(3, 3rem);
 `;
 

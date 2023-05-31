@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export const MotionEntry = styled(motion.article)`
+export const MachineEntry = styled.article`
   background-color: var(--color-card-bg);
   display: flex;
   position: relative;
@@ -13,6 +13,9 @@ export const MotionEntry = styled(motion.article)`
   width: 20rem;
   box-shadow: var(--shadow-elevation-medium);
   margin: auto;
+`;
+
+export const MotionEntry = styled(MachineEntry)`
   transition: transform 0.2s;
 `;
 

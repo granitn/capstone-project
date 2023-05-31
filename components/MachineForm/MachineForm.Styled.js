@@ -19,7 +19,7 @@ export const FormLabel = styled.label`
 `;
 
 export const FormInput = styled.input`
-  width: 5rem;
+  min-width: 5rem;
   height: 2rem;
   border: none;
   box-shadow: var(--shadow-elevation-low);
