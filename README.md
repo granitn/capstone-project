@@ -1,24 +1,38 @@
-# New Project
+# 💪 RE:MEmber - Capstone project
 
-This project was created from the neue fische next template.
+![RE:MEmber](/public/images/header.png)
 
-## Development
+> RE:MEmber is a fitness companion app to aid in keeping you motivated to eat and memorize your machine settings in the gym.
 
-### CodeSandbox
+## `Description`
 
-Select the "Browser" tab to view this project. If this project contains tests, select the "Tests" tab to check your progress.
+**This is a capstone project for [neuefische](https://www.neuefische.de/) web development bootcamp.**
 
-> 💡 Please note that Next.js support on CodeSandbox is not great.
+You can safe your settings for every machine in the gym aswell as take a picture with your phone.
+These are uploaded to a database so you and your friends can access the same information and maybe add your PRs too so you can continue to push each other to the next level.
+while the Tracker is safed locally so every user tracks only their own nutrient intake.
 
-### Local development
+![short](< /public/movie/ezgif.com-resize%20(1).gif >)
 
-To run project commands locally, you need to install the dependencies using `npm i` first.
+### `Demo`
 
-You can then use the following commands:
+You can find the hosted version on Vercel: [RE:MEmber Demo](https://re-me-mber.vercel.app/)
 
-- `npm run dev` to start the development server
-- `npm run build` to create a production build
-- `npm run start` to start the production build
-- `npm run test` to run the tests in watch mode (if available)
+**_IMPORTANT NOTE: currently optimized for mobile_**
 
-> 💡 This project requires a bundler. You can use `npm run dev` to start the development server. You can then view the project in the browser at `http://localhost:3000`. The Live Preview Extension for Visual Studio Code will **not** work for this project.
+## `Tech Stack`
+
+- React
+- Next.js
+- Styled Components
+- Framer Motion
+- MongoDB Atlas
+- Cloudinary
+
+## `Project Setup`
+
+- Clone this repository
+- Create your own `.env` inside the root folder
+- Add your `MONGODB_URI`, `NEXT_PUBLIC_CLOUDNAME`, `NEXT_PUBLIC_UPLOAD_PRESET` to the `.env`
+- Inside root folder install all dependencies via `npm install`
+- Run the developement mode via `npm run dev`
